@@ -8,14 +8,6 @@
 <script src=https://cdn.jsdelivr.net/npm/fhirclient@latest/build/fhir-client.js></script>
 <script src=https://cdn.jsdelivr.net/npm/fhirclient@latest/build/fhir-client.min.js></script>
 <script>
-    extractData().then(
-        function(p) {
-            drawVisualization(p);
-        },
-        function() {
-            $('#errors').html('<p>Failed to call FHIR server </p>');
-        }
-    )
     FHIR.oauth2.authorize({
         'client_id': 'abc',
         'scope': 'patient/Patient.read patient/Observation.read launch/patient online_access openid profile',
