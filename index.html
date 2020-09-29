@@ -73,9 +73,10 @@ function onReady(smart)  {
 
       ret.resolve(p);
     });
-  } else {
-    onError();
-  }
+}
+//   } else {
+//     onError();
+//   }
 }
 
 FHIR.oauth2.ready(onReady, onError);
