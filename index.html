@@ -19,7 +19,9 @@ function onError() {
 }
 
 function onReady(smart)  {
-    console.log(smart);
+    var patient = smart.patient;
+    
+    console.log(patient);
 //   if (smart.hasOwnProperty('patient')) {
 //     var patient = smart.patient;
 //     var pt = patient.read();
