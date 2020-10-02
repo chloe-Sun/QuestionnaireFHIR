@@ -12,17 +12,17 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>
 
-function onError() {
-  console.log('Loading error', arguments);
-  // ret.reject();
-}
+// function onError() {
+//   console.log('Loading error', arguments);
+//   // ret.reject();
+// }
 
-function onReady(smart)  {
-  if (smart.hasOwnProperty('patient')) {
-    var patient = smart.patient;
-    console.log(patient);
-    var pt = patient.read();
-    console.log(pt);
+// function onReady(smart)  {
+//   if (smart.hasOwnProperty('patient')) {
+//     var patient = smart.patient;
+//     console.log(patient);
+//     var pt = patient.read();
+//     console.log(pt);
     // var obv = smart.patient.api.fetchAll({
     //             type: 'Observation',
     //             query: {
@@ -34,11 +34,11 @@ function onReady(smart)  {
     //             }
     //           });
 
-    $.when(pt).fail(onError);
+    // $.when(pt).fail(onError);
 
-    $.when(pt).done(function(patient) {
-      var id = patient.id;
-      console.log(id);
+    // $.when(pt).done(function(patient) {
+    //   var id = patient.id;
+    //   console.log(id);
       // var gender = patient.gender;
 
       // var fname = '';
@@ -50,7 +50,7 @@ function onReady(smart)  {
       // }
       // console.log(fname);
       // console.log(lname);
-    });
+    // });
 
 //       var height = byCodes('8302-2');
 //       var systolicbp = getBloodPressureValue(byCodes('55284-4'),'8480-6');
@@ -80,10 +80,10 @@ function onReady(smart)  {
 //     });
 //   } else {
 //     onError();
-  }
-}
+//   }
+// }
 
-const client = FHIR.oauth2.ready(onReady, onError);
+const client = FHIR.oauth2.ready();
 console.log(client);
 // return ret.promise();
 </script>
