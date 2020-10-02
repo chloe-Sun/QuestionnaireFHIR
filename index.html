@@ -18,7 +18,7 @@
         function(pt) {
           const patient = JSON.parse(JSON.stringify(pt, null, 4));
           console.log(patient.id);
-          console.log(patient.family);
+          console.log(patient.name.family);
           document.getElementById("patient").innerText =JSON.stringify(pt, null, 4);
 
         },
