@@ -5,8 +5,9 @@
     <title>Main page</title>
 </head>
 <body>
-
-
+  <h4>Current Patient</h4>
+  <div id="patient">Loading...</div>
+  <br/>
   <script src="https://cdn.jsdelivr.net/npm/fhirclient/build/fhir-client.js"></script>
   <script>
   FHIR.oauth2.ready().then(function(client) {
@@ -15,7 +16,7 @@
 
     client.patient.read().then(
         function(pt) {
-            console.log(JSON.stringify(pt, null, 4));
+          document.getElementById("patient").innerText =JSON.stringify(pt, null, 4);
         },
         function(error) {
             document.getElementById("patient").innerText = error.stack;
