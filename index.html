@@ -18,12 +18,10 @@ function onError() {
 }
 
 function onReady(smart)  {
-
-    console.log(JSON.stringify(smart));
-  // if (smart.hasOwnProperty('patient')) {
-  //   var patient = smart.patient;
-  //   console.log(patient);
-  //   var pt = patient.read();
+  if (smart.hasOwnProperty('patient')) {
+    var patient = smart.patient;
+    console.log(patient);
+    var pt = patient.read();
     // var obv = smart.patient.api.fetchAll({
     //             type: 'Observation',
     //             query: {
@@ -35,21 +33,21 @@ function onReady(smart)  {
     //             }
     //           });
 
-    // $.when(pt).fail(onError);
+    $.when(pt).fail(onError);
 
-    // $.when(pt).done(function(patient) {
-    //   var gender = patient.gender;
+    $.when(pt).done(function(patient) {
+      var gender = patient.gender;
 
-    //   var fname = '';
-    //   var lname = '';
+      var fname = '';
+      var lname = '';
 
-    //   if (typeof patient.name[0] !== 'undefined') {
-    //     fname = patient.name[0].given.join(' ');
-    //     lname = patient.name[0].family.join(' ');
-    //   }
-    //   console.log(fname);
-    //   console.log(lname);
-    // });
+      if (typeof patient.name[0] !== 'undefined') {
+        fname = patient.name[0].given.join(' ');
+        lname = patient.name[0].family.join(' ');
+      }
+      console.log(fname);
+      console.log(lname);
+    });
 
 //       var height = byCodes('8302-2');
 //       var systolicbp = getBloodPressureValue(byCodes('55284-4'),'8480-6');
@@ -79,7 +77,7 @@ function onReady(smart)  {
 //     });
 //   } else {
 //     onError();
-  // }
+  }
 }
 
 FHIR.oauth2.ready(onReady, onError);
