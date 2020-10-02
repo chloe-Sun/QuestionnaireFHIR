@@ -25,8 +25,8 @@
         }
     );
 
-    client.request("/Questionnaire?patient=" + client.patient.id, {
-        resolveReferences: [ "QuestionnaireReference" ],
+    client.request("/QuestionnaireResponse?patient=" + client.patient.id, {
+        resolveReferences: [ "QuestionnaireResponseReference" ],
         graph: true
     })
     
