@@ -85,6 +85,8 @@
 
 const client = FHIR.oauth2.ready();
 console.log(client);
+const patient = client.request(`Patient/${client.patient.id}`);
+console.log(patient);
 // return ret.promise();
 </script>
 
