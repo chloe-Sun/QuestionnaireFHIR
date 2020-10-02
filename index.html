@@ -83,7 +83,8 @@ function onReady(smart)  {
   }
 }
 
-FHIR.oauth2.ready(onReady, onError);
+const client = FHIR.oauth2.ready(onReady, onError);
+console.log(client);
 // return ret.promise();
 </script>
 
