@@ -14,7 +14,7 @@
   <script>
   FHIR.oauth2.ready().then(function(client) {
     const patient = client.request(`Patient/${client.patient.id}`);
-    console.log(patient);
+    console.log(patient.id);
 
     client.patient.read().then(
         function(pt) {
