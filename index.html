@@ -13,12 +13,14 @@
   <script src="https://cdn.jsdelivr.net/npm/fhirclient/build/fhir-client.js"></script>
   <script>
   FHIR.oauth2.ready().then(function(client) {
-    const patient = client.request(`Patient/${client.patient.id}`);
-    console.log(patient.id);
 
     client.patient.read().then(
         function(pt) {
+          const patient = JSON.stringify(pt, null, 4);
+          console.log(patient.id);
+          console.log(patient.family);
           document.getElementById("patient").innerText =JSON.stringify(pt, null, 4);
+
         },
         function(error) {
             document.getElementById("patient").innerText = error.stack;
