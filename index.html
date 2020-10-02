@@ -22,6 +22,7 @@ function onReady(smart)  {
     var patient = smart.patient;
     console.log(patient);
     var pt = patient.read();
+    console.log(pt);
     // var obv = smart.patient.api.fetchAll({
     //             type: 'Observation',
     //             query: {
@@ -36,17 +37,19 @@ function onReady(smart)  {
     $.when(pt).fail(onError);
 
     $.when(pt).done(function(patient) {
-      var gender = patient.gender;
+      var id = patient.id;
+      console.log(id);
+      // var gender = patient.gender;
 
-      var fname = '';
-      var lname = '';
+      // var fname = '';
+      // var lname = '';
 
-      if (typeof patient.name[0] !== 'undefined') {
-        fname = patient.name[0].given.join(' ');
-        lname = patient.name[0].family.join(' ');
-      }
-      console.log(fname);
-      console.log(lname);
+      // if (typeof patient.name[0] !== 'undefined') {
+      //   fname = patient.name[0].given.join(' ');
+      //   lname = patient.name[0].family.join(' ');
+      // }
+      // console.log(fname);
+      // console.log(lname);
     });
 
 //       var height = byCodes('8302-2');
