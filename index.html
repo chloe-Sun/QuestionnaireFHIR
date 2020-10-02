@@ -16,7 +16,7 @@
 
     client.patient.read().then(
         function(pt) {
-          const patient = JSON.stringify(pt, null, 4);
+          const patient = JSON.parse(JSON.stringify(pt, null, 4));
           console.log(patient.id);
           console.log(patient.family);
           document.getElementById("patient").innerText =JSON.stringify(pt, null, 4);
