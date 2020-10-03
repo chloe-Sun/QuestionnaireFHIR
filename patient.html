@@ -9,15 +9,8 @@
   <div id="patient">Loading</div>
   <script src="https://cdn.jsdelivr.net/npm/fhirclient/build/fhir-client.js"></script>
   <script>
-      const client = localStorage.getItem("client");
-      client.patient.read().then(
-        function(pt) {
-          const patient = JSON.parse(JSON.stringify(pt, null, 4));
-          document.getElementById("patient").innerText = patient;
-        },
-        function(error) {
-            document.getElementById("patient").innerText = error.stack;
-        }
-    );
+      const pt = localStorage.getItem("pt");
+      const patient = JSON.parse(JSON.stringify(pt, null, 4));
+      document.getElementById("patient").innerText = patient;
   </script>
 </body>
