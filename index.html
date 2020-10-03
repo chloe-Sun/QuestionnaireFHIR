@@ -32,6 +32,16 @@
         }
     );
 
+    client.user.read().then(
+        function(ur) {
+            localStorage.setItem("userInfo",JSON.stringify(ur,null,4));
+            console.log(localStorage.getItem("userInfo"));
+        },
+        function(error) {
+            console.log("get user info failed");
+        }
+    )
+
     client.request("/QuestionnaireResponse?patient=" + client.patient.id, {
         resolveReferences: [ "QuestionnaireResponseReference" ],
         graph: true
@@ -55,6 +65,7 @@
             document.getElementById("ques").innerText = error.stack;
         }
     );
+
   }).catch(console.error);
   </script>
 
