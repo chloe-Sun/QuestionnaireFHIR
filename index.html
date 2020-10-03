@@ -15,13 +15,10 @@
   <script>
   FHIR.oauth2.ready().then(function(client) {
 
-      localStorage.setItem("client", client);
-
     client.patient.read().then(
         function(pt) {
-          localStorage.setItem("pt", pt);
+            localStorage.setItem("patinetInfo",JSON.stringify(pt, null, 4));
           const patient = JSON.parse(JSON.stringify(pt, null, 4));
-          
           const id = patient.id;
           localStorage.setItem("patientId", patient.id);
           const name = patient.name[0].prefix[0] + patient.name[0].given[0] + " " + patient.name[0].family;
