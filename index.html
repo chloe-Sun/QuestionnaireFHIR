@@ -18,11 +18,11 @@
     client.patient.read().then(
         function(pt) {
             localStorage.setItem("patientInfo",JSON.stringify(pt, null, 4));
+            console.log(localStorage.getItem("patientInfo"));
           const patient = JSON.parse(JSON.stringify(pt, null, 4));
           const id = patient.id;
           localStorage.setItem("patientId", patient.id);
           const name = patient.name[0].prefix[0] + patient.name[0].given[0] + " " + patient.name[0].family;
-          console.log(name);
           document.getElementById("patient").innerHTML = "<a href='patient.html'>" + name + "</a>";
           document.getElementById("id").innerText = "Patient Id: " + id;
           
