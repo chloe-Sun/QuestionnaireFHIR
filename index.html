@@ -5,7 +5,7 @@
     <title>Main page</title>
 </head>
 <body>
-  <h4>Current Patient</h4>
+  <h4>Patient List</h4>
   <div id="patient">Loading...</div>
   <h4>Questionnaire</h4>
   <div id="ques">Loading...</div>
@@ -18,7 +18,11 @@
         function(pt) {
           const patient = JSON.parse(JSON.stringify(pt, null, 4));
           console.log(patient.id);
-          console.log(patient.name[0].family);
+          localStorage.setItem("patientId", patient.id);
+          const family = patient.name[0].family;
+          const given = patient.name[0].given;
+          console.log(family);
+          console.log(given);
           document.getElementById("patient").innerText =JSON.stringify(pt, null, 4);
 
         },
