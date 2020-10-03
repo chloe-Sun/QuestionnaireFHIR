@@ -17,6 +17,7 @@
     client.patient.read().then(
         function(pt) {
           const patient = JSON.parse(JSON.stringify(pt, null, 4));
+          document.getElementById("patient").innerText =JSON.stringify(pt, null, 4);
           console.log(patient.id);
           localStorage.setItem("patientId", patient.id);
           const family = patient.name[0].family;
@@ -25,8 +26,7 @@
         //   const name = patient.prefix[0] + patient.name[0].given[0] + patient.name[0].family;
           console.log(given);
           console.log(prefix);
-          document.getElementById("patient").innerText =JSON.stringify(pt, null, 4);
-
+          
         },
         function(error) {
             document.getElementById("patient").innerText = error.stack;
