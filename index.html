@@ -17,7 +17,7 @@
 
     client.patient.read().then(
         function(pt) {
-            localStorage.setItem("patinetInfo",JSON.stringify(pt, null, 4));
+            localStorage.setItem("patientInfo",JSON.stringify(pt, null, 4));
           const patient = JSON.parse(JSON.stringify(pt, null, 4));
           const id = patient.id;
           localStorage.setItem("patientId", patient.id);
