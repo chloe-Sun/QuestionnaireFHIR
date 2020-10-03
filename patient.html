@@ -10,7 +10,7 @@
   <script src="https://cdn.jsdelivr.net/npm/fhirclient/build/fhir-client.js"></script>
   <script>
       const pt = localStorage.getItem("pt");
-      const patient = JSON.parse(JSON.stringify(pt, null, 4));
+      const patient = JSON.stringify(pt, null, 4);
       document.getElementById("patient").innerText = patient;
   </script>
 </body>
