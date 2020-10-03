@@ -9,6 +9,7 @@
   <div id="patient">Loading</div>
   <script src="https://cdn.jsdelivr.net/npm/fhirclient/build/fhir-client.js"></script>
   <script>
+      console.log(localStorage.getItem("patientInfo"));
       const patient = localStorage.getItem("patientInfo");
       console.log(patient);
       document.getElementById("patient").innerText = patient;
