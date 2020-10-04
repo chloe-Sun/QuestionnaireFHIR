@@ -15,6 +15,12 @@
   <script>
   FHIR.oauth2.ready().then(function(client) {
 
+      console.log(client);
+
+      localStorage.setItem("client", client);
+      console.log(localStorage.getItem("client"));
+
+
     client.patient.read().then(
         function(pt) {
             localStorage.setItem("patientInfo",JSON.stringify(pt, null, 4));
