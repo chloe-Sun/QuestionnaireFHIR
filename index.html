@@ -41,7 +41,7 @@
     client.user.read().then(
         function(ur) {
             localStorage.setItem("userInfo",JSON.stringify(ur,null,4));
-            console.log(localStorage.getItem("userInfo"));
+            // console.log(localStorage.getItem("userInfo"));
         },
         function(error) {
             console.log("get user info failed");
