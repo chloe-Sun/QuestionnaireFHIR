@@ -40,7 +40,9 @@
   <script src="https://cdn.jsdelivr.net/npm/fhirclient/build/fhir-client.js"></script>
   <script>
       const patient = JSON.parse(localStorage.getItem("patientInfo"));
+      console.log(patient);
       const id = patient.id;
+      console.log(id);
       const name = patient.name[0].prefix[0] + patient.name[0].given[0] + " " + patient.name[0].family;
       const gender = patient.gender;
       const birth = patient.birthDate;
