@@ -1,15 +1,57 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Main page</title>
+  <title>User page</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <body>
-  <h4>User</h4>
-  <div id="user">Loading</div>
-  <script src="https://cdn.jsdelivr.net/npm/fhirclient/build/fhir-client.js"></script>
-  <script>
-      const user = localStorage.getItem("userInfo");
-      document.getElementById("user").innerText = user;
-  </script>
+  <div class = "app">
+    <div class = "header">
+        <h1>User Profile</h1>
+    </div>
+
+    <div class="title">
+        <h5><span class="line">Upload Your profile<span></h5>
+        <hr>
+    </div>
+
+    <div class = "main">
+      <div class="form">
+        <table>
+          <tr><td>Family Name </td><td id=family></td></tr>
+          <tr><td>Given Name </td><td id=given></td></tr>
+          <tr><td>Gender </td><td id=gender></td></tr>
+          <tr><td>Address </td><td id=address></td></tr>
+          <tr><td>PostalCode </td><td id=postcode></td></tr>
+        </table>
+
+      </div>
+      <div class="btn">
+        <button>Save</button>
+        <button>Cancel</button>
+      </div>
+    </div>
+
+    <div class = "bottom">
+        <a href = "menu.html"><span>Home</span></a>
+        <a href = "patient.html"><span>Patient</span></a>
+        <a href = "profile.html" style="color:#FFF;"><span>Profile</span></a>
+        <a href = "about.html"><span>About</span></a>
+    </div>
+</div>
 </body>
+  <script src="https://cdn.jsdelivr.net/npm/fhirclient/build/fhir-client.js"></script>
+    <script>
+        const user = JSON.parse(localStorage.getItem("userInfo"));
+        const familyName = user.name[0].family;
+        const givenName = user.name[0].given;
+        const gender = user.gender;
+        const address = user.address[0].line[0] + user.address[0].city + user.address[0].state + user.address[0].country;
+        const postCode = user.address[0].postalCode;
+        document.getElementById(family).innerText = familyName;
+        document.getElementById(given).innerText = givenName;
+        document.getElementById(gender).innerText = gender;
+        document.getElementById(address).innerText = address;
+        document.getElementById(postcode).innerText = postCode;
+    </script>
+</html>

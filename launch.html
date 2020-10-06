@@ -1,17 +1,32 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Launch Page</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Launch Page</title>
+        <link rel="stylesheet" href="./css/style.css"/> 
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+    <body>
+        <div class = "app">
+            <div class = "header">
+            </div>
+            <div class = "content">
+                <img src = "./images/homePic.jpg"class = "home_img"/>
+                <button id=login type="submit" class = "button" >Login</button>
+            </div>
+            
+            <p class = "copyright">Copyright @ COMP3001-G6</p>
+        </div>
+    </body>
     <script src="https://cdn.jsdelivr.net/npm/fhirclient/build/fhir-client.js"></script>
-<script>
-    FHIR.oauth2.authorize({
-        'clientId': 'abc',
-        'scope': 'launch openid fhirUser patient/*.* user/*.*',
-        'iss':'https://launch.smarthealthit.org/v/r4/sim/eyJoIjoiMSIsImIiOiIxNTVkM2Q4MC1mM2YwLTRiMzktOTIwNy0wZDEyMmNmOTRhMTEiLCJlIjoiZWZiNWQ0Y2UtZGZmYy00N2RmLWFhNmQtMDVkMzcyZmRiNDA3In0/fhir'
-    });
-</script>
-</body>
+    <script>
+    function login() {
+        FHIR.oauth2.authorize({
+            'clientId': 'abc',
+            'scope': 'launch openid fhirUser patient/*.* user/*.*',
+            'iss':'https://launch.smarthealthit.org/v/r4/sim/eyJoIjoiMSIsImIiOiIxNTVkM2Q4MC1mM2YwLTRiMzktOTIwNy0wZDEyMmNmOTRhMTEiLCJlIjoiZWZiNWQ0Y2UtZGZmYy00N2RmLWFhNmQtMDVkMzcyZmRiNDA3In0/fhir'
+        });
+    }
+    document.getElementById("login").addEventListener("click",login);
+    </script>
 </html>
