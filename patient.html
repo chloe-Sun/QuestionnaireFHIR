@@ -48,11 +48,11 @@
       const birth = patient.birthDate;
       const address = patient.address[0].line[0] + patient.address[0].city + patient.address[0].state + patient.address[0].country;
       const postCode = patient.address[0].postalCode;
-      document.getElementById(patientId).innerText = id;
-      document.getElementById(name).innerText = name;
-      document.getElementById(gender).innerText = gender;
-      document.getElementById(dob).innerText = birth;
-      document.getElementById(address).innerText = address;
-      document.getElementById(postcode).innerText = postCode;
+      document.getElementById("patientId").innerText = id;
+      document.getElementById("name").innerText = name;
+      document.getElementById("gender").innerText = gender;
+      document.getElementById("dob").innerText = birth;
+      document.getElementById("address").innerText = address;
+      document.getElementById("postcode").innerText = postCode;
   </script>
 </html>
