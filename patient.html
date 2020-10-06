@@ -13,7 +13,7 @@
         <div class="cont form">
           <h3>Patient Information</h3>
           <table>
-                  <tr><td>ID: </td><td id="id"></td></tr>
+                  <tr><td>ID: </td><td id=patientId></td></tr>
                   <tr><td>Name: </td><td id=name></td></tr>
                   <tr><td>Gender: </td><td id=gender></td></tr>
                   <tr><td>Date Of Birth: </td><td id=dob></td></tr>
@@ -46,7 +46,7 @@
       const birth = patient.birthDate;
       const address = patient.address[0].line[0] + patient.address[0].city + patient.address[0].state + patient.address[0].country;
       const postCode = patient.address[0].postalCode;
-      document.getElementById(id).innerText = id;
+      document.getElementById(patientId).innerText = id;
       document.getElementById(name).innerText = name;
       document.getElementById(gender).innerText = gender;
       document.getElementById(dob).innerText = birth;
