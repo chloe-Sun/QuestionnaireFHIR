@@ -22,15 +22,13 @@
               </table>
         </div>
         <div class="cont">
-          <h3>Questionaire have been done</h3>
-              <div>Questionaire 1</div>
-              <div>Questionaire 2</div>
-              <div>Questionaire 3</div>
+          <h3>Questionaire Completed</h3>
+              <div id="ques"></div>
         </div>
       </div>
 
       <div class = "bottom">
-          <a href = "menu.html"><span>Home</span></a>
+          <a href = "index.html"><span>Home</span></a>
           <a href = "patient.html"><span>Patient</span></a>
           <a href = "profile.html"><span>Profile</span></a>
           <a href = "about.html"><span>About</span></a>
@@ -54,5 +52,6 @@
       document.getElementById("dob").innerText = birth;
       document.getElementById("address").innerText = address;
       document.getElementById("postcode").innerText = postCode;
+      document.getElementById("ques").innerText = localStorage.getItem("questionnaire");
   </script>
 </html>
