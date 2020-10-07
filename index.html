@@ -87,7 +87,7 @@
             }
         );
 
-        const patientToCreate = JSON.parse({
+        const patientToCreate = {
   "resourceType": "QuestionnaireResponse",
   "id": "f201",
   "text": {
@@ -188,7 +188,7 @@
       ]
     }
   ]
-})
+}
 
         function createResponse() {
             client.create(patientToCreate);
