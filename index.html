@@ -58,6 +58,16 @@
             }
         )
 
+        client.request("/Questionnaire", {
+            resolveReferences: ["QuestionnaireReference"],
+            graph:true
+        })
+
+        .then(function(data) {
+            console.log(data);
+        });
+
+
         client.request("/QuestionnaireResponse?patient=" + client.patient.id, {
             resolveReferences: [ "QuestionnaireResponseReference" ],
             graph: true
