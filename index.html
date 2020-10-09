@@ -74,18 +74,18 @@
                 // throw new Error("No questionnaire found for the selected patient");
             }
             return data.entry;
-        })
+        });
         
 
-        .then(
-            function(meds) {
-                document.getElementById("ques").innerText = JSON.stringify(meds, null, 4);
+        // .then(
+        //     function(meds) {
+        //         document.getElementById("ques").innerText = JSON.stringify(meds, null, 4);
                 
-            },
-            function(error) {
-                document.getElementById("ques").innerText = error.stack;
-            }
-        );
+        //     },
+        //     function(error) {
+        //         document.getElementById("ques").innerText = error.stack;
+        //     }
+        // );
 
         const k10 = {
             "resourceType": "Questionnaire",
