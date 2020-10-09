@@ -73,8 +73,9 @@
                 localStorage.setItem("questionnaire", "No questionnaire found for the selected patient");
                 // throw new Error("No questionnaire found for the selected patient");
             }
-            return data.entry;
             console.log(data.entry);
+            return data.entry;
+            
         });
 
         client.request("/Questionnaire?_id=phq-9-questionnaire", {
