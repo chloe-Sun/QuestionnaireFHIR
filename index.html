@@ -76,7 +76,7 @@
             return data.entry;
         });
 
-        client.request("/Questionnaire/?title=Patient%20Health%20Questionnaire%20(PHQ-9)", {
+        client.request("/Questionnaire?title=Patient%20Health%20Questionnaire%20(PHQ-9)", {
             resolveReferences: ["QuestionnaireReference"],
             graph: true
         })
