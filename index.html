@@ -74,6 +74,7 @@
                 // throw new Error("No questionnaire found for the selected patient");
             }
             return data.entry;
+            console.log(data.entry);
         });
 
         client.request("/Questionnaire?_id=phq-9-questionnaire", {
