@@ -67,7 +67,7 @@
         
 
         .then(function(data) {
-            localStorage.setItem("questionnaire", JSON.stringify(data.text.div));
+            localStorage.setItem("questionnaire", JSON.stringify(data));
             console.log(data)
             if (!data.entry || !data.entry.length) {
                 localStorage.setItem("questionnaire", "No questionnaire found for the selected patient");
