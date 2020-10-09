@@ -42,7 +42,7 @@
         client.patient.read().then(
             function(pt) {
                 localStorage.setItem("patientInfo",JSON.stringify(pt, null, 4));
-                console.log(client.patient.id);
+                console.log(pt);
             },
             function(error) {
                 document.getElementById("patient").innerText = error.stack;
@@ -52,6 +52,7 @@
         client.user.read().then(
             function(ur) {
                 localStorage.setItem("userInfo",JSON.stringify(ur,null,4));
+                console.log(ur);
             },
             function(error) {
                 console.log("get user info failed");
@@ -67,6 +68,7 @@
 
         .then(function(data) {
             localStorage.setItem("questionnaire", JSON.stringify(data.text.div));
+            console.log(data)
             if (!data.entry || !data.entry.length) {
                 localStorage.setItem("questionnaire", "No questionnaire found for the selected patient");
                 // throw new Error("No questionnaire found for the selected patient");
@@ -85,114 +87,99 @@
             }
         );
 
-        // const patientToCreate = {
-        //     "resourceType": "QuestionnaireResponse",
-        //     "id": "f201",
-        //     "text": {
-        //         "status": "generated",
-        //         "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: f201</p><p><b>status</b>: completed</p><p><b>subject</b>: <a>Roel</a></p><p><b>authored</b>: 18/06/2013 12:00:00 AM</p><p><b>author</b>: <a>Practitioner/f201</a></p><p><b>source</b>: <a>Practitioner/f201</a></p><blockquote><p><b>item</b></p><p><b>linkId</b>: 1</p><h3>Items</h3><table><tr><td>-</td></tr><tr><td>*</td></tr></table></blockquote><blockquote><p><b>item</b></p><p><b>linkId</b>: 2</p><p><b>text</b>: General questions</p><h3>Items</h3><table><tr><td>-</td></tr><tr><td>*</td></tr><tr><td>*</td></tr><tr><td>*</td></tr><tr><td>*</td></tr></table></blockquote><blockquote><p><b>item</b></p><p><b>linkId</b>: 3</p><p><b>text</b>: Intoxications</p><h3>Items</h3><table><tr><td>-</td></tr><tr><td>*</td></tr><tr><td>*</td></tr></table></blockquote></div>"
-        //     },
-        //     "status": "completed",
-        //     "subject": {
-        //         "reference": "Patient/" + client.patient.id,
-        //         "display": "Roel"
-        //     },
-        //     "authored": "2013-06-18T00:00:00+01:00",
-        //     "author": {
-        //         "reference": "Practitioner/" + client.user.id
-        //     },
-        //     "source": {
-        //         "reference": "Practitioner/" + client.user.id
-        //     },
-        //     "item": [
-        //         {
-        //         "linkId": "1",
-        //         "item": [
-        //             {
-        //             "linkId": "1.1",
-        //             "text": "Do you have allergies?",
-        //             "answer": [
-        //                 {
-        //                 "valueString": "I am allergic to house dust"
-        //                 }
-        //             ]
-        //             }
-        //         ]
-        //         },
-        //         {
-        //         "linkId": "2",
-        //         "text": "General questions",
-        //         "item": [
-        //             {
-        //             "linkId": "2.1",
-        //             "text": "What is your gender?",
-        //             "answer": [
-        //                 {
-        //                 "valueString": "Male"
-        //                 }
-        //             ]
-        //             },
-        //             {
-        //             "linkId": "2.2",
-        //             "text": "What is your date of birth?",
-        //             "answer": [
-        //                 {
-        //                 "valueDate": "1960-03-13"
-        //                 }
-        //             ]
-        //             },
-        //             {
-        //             "linkId": "2.3",
-        //             "text": "What is your country of birth?",
-        //             "answer": [
-        //                 {
-        //                 "valueString": "The Netherlands"
-        //                 }
-        //             ]
-        //             },
-        //             {
-        //             "linkId": "2.4",
-        //             "text": "What is your marital status?",
-        //             "answer": [
-        //                 {
-        //                 "valueString": "married"
-        //                 }
-        //             ]
-        //             }
-        //         ]
-        //         },
-        //         {
-        //         "linkId": "3",
-        //         "text": "Intoxications",
-        //         "item": [
-        //             {
-        //             "linkId": "3.1",
-        //             "text": "Do you smoke?",
-        //             "answer": [
-        //                 {
-        //                 "valueString": "No"
-        //                 }
-        //             ]
-        //             },
-        //             {
-        //             "linkId": "3.2",
-        //             "text": "Do you drink alchohol?",
-        //             "answer": [
-        //                 {
-        //                 "valueString": "No, but I used to drink"
-        //                 }
-        //             ]
-        //             }
-        //         ]
-        //         }
-        //     ]
-        // }
+        const k10 = {
+            "resourceType": "Questionnaire",
+            "id": "k-10-questionnaire",
+            "text": {
+                "status": "generated",
+                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">PHQ-9 Questionnaire with dynamic logic</div>"
+            },
+            "title": "Kessler Psychological Distress Scale (K10)",
+            "status": "active",
+            "subjectType": [
+                "Patient"
+            ],
+            "item": [
+                {
+                "linkId": "1",
+                "text": "1. During the last 30 days, about how often did you feel tired out for no good reason?",
+                "type": "choice",
+                "required": true,
+                "type": "choice",
+                },
+                {
+                "linkId": "2",
+                "text": "2. During the last 30 days, about how often did you feel nervous?",
+                "type": "choice",
+                "required": true,
+                "type": "string"
+                },
+                {
+                "linkId": "3",
+                "text": "3. During the last 30 days, about how often did you feel so nervous that nothing could calm you down?",
+                "type": "choice",
+                "required": true,
+                "type": "string"
+                },
+                {
+                "linkId": "4",
+                "text": "4. During the last 30 days, about how often did you feel hopeless?",
+                "type": "choice",
+                "required": true,
+                "type": "string"
+                },
+                {
+                "linkId": "5",
+                "text": "5. During the last 30 days, about how often did you feel restless or fidgety?",
+                "type": "choice",
+                "required": true,
+                "type": "string"
+                },
+                {
+                "linkId": "6",
+                "text": "6. During the last 30 days, about how often did you feel so restless you could not sit still?",
+                "type": "choice",
+                "required": true,
+                "type": "string"
+                },
+                {
+                "linkId": "7",
+                "text": "7. During the last 30 days, about how often did you feel depressed?",
+                "type": "choice",
+                "required": true,
+                "type": "string"
+                },
+                {
+                    "linkId": "7",
+                "text": "7. During the last 30 days, about how often did you feel depressed?",
+                "type": "choice",
+                "required": true,
+                "type": "string"
+                },
+                {
+                    "linkId": "8",
+                "text": "8. During the last 30 days, about how often did you feel that everything was an effort?",
+                "type": "choice",
+                "required": true,
+                "type": "string"
+                },
+                {
+                "linkId": "9",
+                "text": "9. During the last 30 days, about how often did you feel so sad that nothing could cheer you up?",
+                "type": "choice",
+                "required": true,
+                "type": "string"
+                },
+                {
+                "linkId": "10",
+                "text": "10. During the last 30 days, about how often did you feel worthless?",
+                "type": "choice",
+                "required": true,
+                "type": "string"
+                }
 
-        // function createResponse() {
-        //     client.create(patientToCreate);
-        // }
-
-        // document.getElementById("create").addEventListener("click", createResponse);
+            ]
+            }
 
         }).catch(console.error);
 
