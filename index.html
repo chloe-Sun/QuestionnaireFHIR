@@ -75,111 +75,15 @@
             }
             return data.entry;
         });
-        
 
-        // .then(
-        //     function(meds) {
-        //         document.getElementById("ques").innerText = JSON.stringify(meds, null, 4);
-                
-        //     },
-        //     function(error) {
-        //         document.getElementById("ques").innerText = error.stack;
-        //     }
-        // );
+        client.request("/Questionnaire/phq-9-questionnaire", {
+            resolveReferences: ["QuestionnaireReference"],
+            graph: true
+        })
 
-        const k10 = {
-            "resourceType": "Questionnaire",
-            "id": "k-10-questionnaire",
-            "text": {
-                "status": "generated",
-                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">PHQ-9 Questionnaire with dynamic logic</div>"
-            },
-            "title": "Kessler Psychological Distress Scale (K10)",
-            "status": "active",
-            "subjectType": [
-                "Patient"
-            ],
-            "item": [
-                {
-                "linkId": "1",
-                "text": "1. During the last 30 days, about how often did you feel tired out for no good reason?",
-                "type": "choice",
-                "required": true,
-                "type": "choice",
-                },
-                {
-                "linkId": "2",
-                "text": "2. During the last 30 days, about how often did you feel nervous?",
-                "type": "choice",
-                "required": true,
-                "type": "string"
-                },
-                {
-                "linkId": "3",
-                "text": "3. During the last 30 days, about how often did you feel so nervous that nothing could calm you down?",
-                "type": "choice",
-                "required": true,
-                "type": "string"
-                },
-                {
-                "linkId": "4",
-                "text": "4. During the last 30 days, about how often did you feel hopeless?",
-                "type": "choice",
-                "required": true,
-                "type": "string"
-                },
-                {
-                "linkId": "5",
-                "text": "5. During the last 30 days, about how often did you feel restless or fidgety?",
-                "type": "choice",
-                "required": true,
-                "type": "string"
-                },
-                {
-                "linkId": "6",
-                "text": "6. During the last 30 days, about how often did you feel so restless you could not sit still?",
-                "type": "choice",
-                "required": true,
-                "type": "string"
-                },
-                {
-                "linkId": "7",
-                "text": "7. During the last 30 days, about how often did you feel depressed?",
-                "type": "choice",
-                "required": true,
-                "type": "string"
-                },
-                {
-                    "linkId": "7",
-                "text": "7. During the last 30 days, about how often did you feel depressed?",
-                "type": "choice",
-                "required": true,
-                "type": "string"
-                },
-                {
-                    "linkId": "8",
-                "text": "8. During the last 30 days, about how often did you feel that everything was an effort?",
-                "type": "choice",
-                "required": true,
-                "type": "string"
-                },
-                {
-                "linkId": "9",
-                "text": "9. During the last 30 days, about how often did you feel so sad that nothing could cheer you up?",
-                "type": "choice",
-                "required": true,
-                "type": "string"
-                },
-                {
-                "linkId": "10",
-                "text": "10. During the last 30 days, about how often did you feel worthless?",
-                "type": "choice",
-                "required": true,
-                "type": "string"
-                }
-
-            ]
-            }
+        .then(function(data) {
+            console.log(data)
+        });
 
         }).catch(console.error);
 
