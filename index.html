@@ -76,7 +76,7 @@
             return data.entry;
         });
 
-        client.request("/Questionnaire/?id=phq-9-questionnaire", {
+        client.request("/Questionnaire/?identifier=phq-9-questionnaire", {
             resolveReferences: ["QuestionnaireReference"],
             graph: true
         })
