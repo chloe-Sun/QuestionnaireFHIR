@@ -59,15 +59,17 @@
         var title = questionnaire[i].resource.identifier.value;
         div.appendChild(document.createTextNode(title));
         var content = document.createElement("div");
+        content.id = "content" + i;
         content.innerHTML = questionnaire[i].resource.text.div;
         // content.style.display = "none";
         div.appendChild(content);
         document.getElementById("ques").appendChild(div);
         div.addEventListener("click", function() {
-          if (content.style.display == "none") {
-            content.style.display = "block";
+          var text = document.getElementById("content" + i);
+          if (text.style.display == "none") {
+            text.style.display = "block";
           } else {
-            content.style.display = "none";
+            text.style.display = "none";
           }
         })
       }
