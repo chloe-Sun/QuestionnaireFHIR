@@ -52,6 +52,7 @@
       document.getElementById("address").innerText = address;
       document.getElementById("postcode").innerText = postCode;
       console.log(questionnaire.length);
+
       for (i = 0; i < questionnaire.length; i++) {
         var div = document.createElement("div");
         var title = questionnaire[i].resource.identifier.value;
@@ -62,10 +63,10 @@
         div.appendChild(content);
         document.getElementById("ques").appendChild(div);
         div.addEventListener("click", function() {
-          if (div.style.display == "none") {
-            div.style.display = "block";
+          if (content.style.display == "none") {
+            content.style.display = "block";
           } else {
-            div.style.display = "none";
+            content.style.display = "none";
           }
         })
       }
