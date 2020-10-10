@@ -27,6 +27,9 @@
         </div>
         <div>
           <h3>Questionnaire to Complete</h3>
+          <a href=phq-9.html>PHQ-9</a>
+          <a href=>k-10</a>
+          <a href=>AUSDRISK</a>
         </div>
       </div>
 
@@ -62,21 +65,15 @@
         var title = questionnaire[i].resource.identifier.value;
         div.appendChild(document.createTextNode(title));
         var content = document.createElement("div");
-        content.id = "content" + i;
-        console.log(content.id);
         content.innerHTML = questionnaire[i].resource.text.div;
         // content.style.display = "none";
         div.appendChild(content);
         document.getElementById("ques").appendChild(div);
-        var contentid = "content" + i;
-        console.log(contentid);
         div.addEventListener("click", function() {
-          
-          var text = document.getElementById(contentid);
-          if (text.style.display == "none") {
-            text.style.display = "block";
+          if (content.style.display == "none") {
+            content.style.display = "block";
           } else {
-            text.style.display = "none";
+            content.style.display = "none";
           }
         })
       }
