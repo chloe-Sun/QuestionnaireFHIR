@@ -106,17 +106,17 @@
           },
           "status" : "completed",
           "subject" : {
-            "reference" : "Patient/subject1"
+            "reference" : "Patient/" + client.patient.id
           },
           "context" : {
             "reference" : "Encounter/encounter1"
           },
           "authored" : "2019-02-13T00:36:41.051113Z",
           "author" : {
-            "reference" : "Practitioner/prov-admin1"
+            "reference" : "Practitioner/" + client.user.id
           },
           "source" : {
-            "reference" : "Patient/subject1"
+            "reference" : "Patient/" + client.patient.id
           },
           "item" : [
             {
