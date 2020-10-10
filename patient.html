@@ -23,7 +23,7 @@
         </div>
         <div class="cont">
           <h3>Questionaire Completed</h3>
-              <div id="ques"></div>
+          <div id="ques"></div>
         </div>
       </div>
 
@@ -52,6 +52,13 @@
       document.getElementById("address").innerText = address;
       document.getElementById("postcode").innerText = postCode;
       document.getElementById("ques").innerText = questionnaire.id;
+      for (i = 0; i < questionnaire.length; i++) {
+        var div = document.createElement("div");
+        var title = questionnaire[i].identifier;
+        var linkText = document.createTextNode(title);
+        div.appendChild(linkText);
+        document.getElementById("ques").appendChild(div);
+      }
       // console.log(localStorage.getItem("questionnaire"));
   </script>
 </html>
