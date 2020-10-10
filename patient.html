@@ -65,9 +65,10 @@
         // content.style.display = "none";
         div.appendChild(content);
         document.getElementById("ques").appendChild(div);
+        var id = "content" + i;
+        console.log(id);
         div.addEventListener("click", function() {
-          var id = "content" + i;
-          console.log(id);
+          
           var text = document.getElementById(id);
           if (text.style.display == "none") {
             text.style.display = "block";
