@@ -60,12 +60,15 @@
         div.appendChild(document.createTextNode(title));
         var content = document.createElement("div");
         content.id = "content" + i;
+        console.log(content.id);
         content.innerHTML = questionnaire[i].resource.text.div;
         // content.style.display = "none";
         div.appendChild(content);
         document.getElementById("ques").appendChild(div);
         div.addEventListener("click", function() {
-          var text = document.getElementById("content" + i);
+          var id = "content" + i;
+          console.log(id);
+          var text = document.getElementById(id);
           if (text.style.display == "none") {
             text.style.display = "block";
           } else {
