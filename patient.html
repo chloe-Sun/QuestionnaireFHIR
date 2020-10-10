@@ -53,7 +53,7 @@
       document.getElementById("postcode").innerText = postCode;
       document.getElementById("ques").innerText = questionnaire.id;
       console.log(questionnaire.length);
-      for (i = 0; i < questionnaire.length - 1; i++) {
+      for (i = 0; i < questionnaire.length; i++) {
         var div = document.createElement("div");
         var title = questionnaire[i].resource.identifier.value;
         console.log(questionnaire[i]);
