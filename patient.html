@@ -65,11 +65,11 @@
         // content.style.display = "none";
         div.appendChild(content);
         document.getElementById("ques").appendChild(div);
-        var id = "content" + i;
-        console.log(id);
+        var contentid = "content" + i;
+        console.log(contentid);
         div.addEventListener("click", function() {
           
-          var text = document.getElementById(id);
+          var text = document.getElementById(contentid);
           if (text.style.display == "none") {
             text.style.display = "block";
           } else {
