@@ -55,6 +55,7 @@
 
       for (i = 0; i < questionnaire.length; i++) {
         var div = document.createElement("div");
+        div.style.border = "2px solid red";
         var title = questionnaire[i].resource.identifier.value;
         div.appendChild(document.createTextNode(title));
         var content = document.createElement("div");
