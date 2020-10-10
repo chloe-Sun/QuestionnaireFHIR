@@ -54,9 +54,9 @@
       document.getElementById("ques").innerText = questionnaire.id;
       console.log(questionnaire.length);
       console.log(questionnaire);
-      for (i = 0; i < questionnaire.length; i++) {
+      for (i = 0; i < questionnaire.length - 1; i++) {
         var div = document.createElement("div");
-        var title = questionnaire[i].identifier;
+        var title = questionnaire[i].resource.identifier.value;
         var linkText = document.createTextNode(title);
         div.appendChild(linkText);
         document.getElementById("ques").appendChild(div);
