@@ -58,7 +58,7 @@
         var title = questionnaire[i].resource.identifier.value;
         div.appendChild(document.createTextNode(title));
         var content = document.createElement("div");
-        content.appendChild(document.createTextNode(questionnaire[i].resource.text.div));
+        content.innerHTML = questionnaire[i].resource.text.div;
         content.style.display = "none";
         div.appendChild(content);
         document.getElementById("ques").appendChild(div);
