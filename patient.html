@@ -60,7 +60,7 @@
         div.appendChild(document.createTextNode(title));
         var content = document.createElement("div");
         content.innerHTML = questionnaire[i].resource.text.div;
-        content.style.display = "none";
+        // content.style.display = "none";
         div.appendChild(content);
         document.getElementById("ques").appendChild(div);
         div.addEventListener("click", function() {
