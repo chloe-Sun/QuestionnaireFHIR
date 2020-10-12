@@ -38,6 +38,7 @@
     <script src="https://cdn.jsdelivr.net/npm/fhirclient/build/fhir-client.js"></script>
     <script>
         FHIR.oauth2.ready().then(function(client) {
+            console.log.client;
 
             localStorage.setItem("client", JSON.stringify(client));
 
