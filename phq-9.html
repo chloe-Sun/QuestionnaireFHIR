@@ -208,12 +208,12 @@ Or the opposite - being so fidgety or restless that you have been moving around 
         for (i = 0; i < 9; i++) {
           const name = "cbox" + (i+1);
           var choices = document.getElementsByName(name);
-          for (j = 0; j < 4; i++) {
+          for (j = 0; j < 4; j++) {
             if (choices[j].checked) {
               answers.push(choies[j].value);
             }
           }
-        };
+        }
         console.log(answers);
       })
       const client = JSON.parse(localStorage.getItem("client"));
