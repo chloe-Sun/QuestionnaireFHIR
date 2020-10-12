@@ -60,24 +60,24 @@
       document.getElementById("postcode").innerText = postCode;
       console.log(questionnaire.length);
 
-      for (i = 0; i < questionnaire.length; i++) {
-        var div = document.createElement("div");
-        div.style.border = "2px solid red";
-        var title = questionnaire[i].resource.identifier.value;
-        div.appendChild(document.createTextNode(title));
-        var content = document.createElement("div");
-        content.innerHTML = questionnaire[i].resource.text.div;
-        content.style.display = "none";
-        div.appendChild(content);
-        document.getElementById("ques").appendChild(div);
-        div.addEventListener("click", function() {
-          if (content.style.display == "none") {
-            content.style.display = "block";
-          } else {
-            content.style.display = "none";
-          }
-        })
-      }
+      // for (i = 0; i < questionnaire.length; i++) {
+      //   var div = document.createElement("div");
+      //   div.style.border = "2px solid red";
+      //   var title = questionnaire[i].resource.identifier.value;
+      //   div.appendChild(document.createTextNode(title));
+      //   var content = document.createElement("div");
+      //   content.innerHTML = questionnaire[i].resource.text.div;
+      //   content.style.display = "none";
+      //   div.appendChild(content);
+      //   document.getElementById("ques").appendChild(div);
+      //   div.addEventListener("click", function() {
+      //     if (content.style.display == "none") {
+      //       content.style.display = "block";
+      //     } else {
+      //       content.style.display = "none";
+      //     }
+      //   })
+      // }
       // console.log(localStorage.getItem("questionnaire"));
   </script>
 </html>
