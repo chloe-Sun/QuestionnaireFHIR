@@ -205,6 +205,8 @@ Or the opposite - being so fidgety or restless that you have been moving around 
     <script>
       var answers = [];
       var codes = [];
+      const client = JSON.parse(localStorage.getItem("client"));
+      console.log(client);  
       document.getElementById("submit").addEventListener("click", function() {
         for (i = 0; i < 9; i++) {
           const name = "cbox" + (i+1);
@@ -230,8 +232,7 @@ Or the opposite - being so fidgety or restless that you have been moving around 
         console.log(codes);
         
       
-      const client = JSON.parse(localStorage.getItem("client"));
-      console.log(client);  
+      
         const phq_9 = {
           "resourceType" : "QuestionnaireResponse",
           "id" : "questionnaireresponse-phq9-" + client.patient.id,
