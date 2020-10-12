@@ -60,7 +60,7 @@
       document.getElementById("postcode").innerText = postCode;
       console.log(questionnaire.length);
 
-      if (questionnaire !== undefined) {
+      if (typeof(questionnaire) != undefined) {
         questionnaire = JSON.parse(questionnaire);
         for (i = 0; i < questionnaire.length; i++) {
           var div = document.createElement("div");

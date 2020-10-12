@@ -203,8 +203,9 @@ Or the opposite - being so fidgety or restless that you have been moving around 
         </div>
     </body>
     <script>
+      var answers = [];
+      var codes = [];
       document.getElementById("submit").addEventListener("click", function() {
-        var answers = [];
         for (i = 0; i < 9; i++) {
           const name = "cbox" + (i+1);
           var choices = document.getElementsByName(name);
@@ -214,11 +215,20 @@ Or the opposite - being so fidgety or restless that you have been moving around 
             }
           }
         }
+        for (i = 0; i < answers.length; i++) {
+          if (answers[i] === "nearly_every_day") {
+            codes.push("LA6571-9");
+          } else if (answers[i] === "more_than_half") {
+            codes.push("LA6570-1");
+          } else if (answres[i] === "several_days") {
+            codes.push("LA6569-3");
+          } else {
+            codes.push("LA6568-5");
+          }
+        }
         console.log(answers);
-      })
-      const client = JSON.parse(localStorage.getItem("client"));
-      console.log(client);
-        
+        console.log(codes);
+      })  
         const phq_9 = {
           "resourceType" : "QuestionnaireResponse",
           "id" : "questionnaireresponse-phq9-" + client.patient.id,
