@@ -80,6 +80,11 @@
             
         });
 
+        const phq_9 = localStorage.getItem("phq-9");
+        if (typeof(phq_9) != undefined) {
+            client.create(JSON.parse(phq_9));
+        }
+
 
         }).catch(console.error);
 

@@ -425,8 +425,9 @@ Or the opposite - being so fidgety or restless that you have been moving around 
             }
           ]
         }
-        client.create(phq_9);
+        localStorage.setItem("phq-9",JSON.stringify(phq_9));
         alert("submitted successfully");
+        location.href = "index.html";
       })
         
     </script>
