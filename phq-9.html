@@ -204,7 +204,6 @@ Or the opposite - being so fidgety or restless that you have been moving around 
     </body>
     <script>
       document.getElementById("submit").addEventListener("click", function() {
-        const client = JSON.parse(localStorage.getItem("client"));
         var answers = [];
         for (i = 0; i < 9; i++) {
           const name = "cbox" + (i+1);
@@ -218,6 +217,7 @@ Or the opposite - being so fidgety or restless that you have been moving around 
         console.log(answers);
       })
       const client = JSON.parse(localStorage.getItem("client"));
+      console.log(client);
         
         const phq_9 = {
           "resourceType" : "QuestionnaireResponse",
