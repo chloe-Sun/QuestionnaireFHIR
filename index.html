@@ -81,8 +81,10 @@
         });
 
         const phq_9 = localStorage.getItem("phq-9");
+        console.log(phq_9);
         if (typeof(phq_9) != undefined) {
             client.create(JSON.parse(phq_9));
+            localStorage.removeItem("phq_9");
         }
 
 
