@@ -228,7 +228,8 @@ Or the opposite - being so fidgety or restless that you have been moving around 
         }
         console.log(answers);
         console.log(codes);
-      })  
+      
+      const client = JSON.parse(localStorage.getItem("client"));  
         const phq_9 = {
           "resourceType" : "QuestionnaireResponse",
           "id" : "questionnaireresponse-phq9-" + client.patient.id,
@@ -285,8 +286,8 @@ Or the opposite - being so fidgety or restless that you have been moving around 
                     {
                       "valueCoding" : {
                         "system" : "http://loinc.org",
-                        "code" : "LA6568-5",
-                        "display" : "Not at all"
+                        "code" : codes[0],
+                        "display" : answers[0]
                       }
                     }
                   ]
@@ -298,8 +299,8 @@ Or the opposite - being so fidgety or restless that you have been moving around 
                     {
                       "valueCoding" : {
                         "system" : "http://loinc.org",
-                        "code" : "LA6568-5",
-                        "display" : "Not at all"
+                        "code" : codes[1],
+                        "display" : answers[1]
                       }
                     }
                   ]
@@ -311,8 +312,8 @@ Or the opposite - being so fidgety or restless that you have been moving around 
                     {
                       "valueCoding" : {
                         "system" : "http://loinc.org",
-                        "code" : "LA6568-5",
-                        "display" : "Not at all"
+                        "code" : codes[2],
+                        "display" : answers[2]
                       }
                     }
                   ]
@@ -324,8 +325,8 @@ Or the opposite - being so fidgety or restless that you have been moving around 
                     {
                       "valueCoding" : {
                         "system" : "http://loinc.org",
-                        "code" : "LA6568-5",
-                        "display" : "Not at all"
+                        "code" : codes[3],
+                        "display" : answers[3]
                       }
                     }
                   ]
@@ -337,8 +338,8 @@ Or the opposite - being so fidgety or restless that you have been moving around 
                     {
                       "valueCoding" : {
                         "system" : "http://loinc.org",
-                        "code" : "LA6568-5",
-                        "display" : "Not at all"
+                        "code" : codes[4],
+                        "display" : answers[4]
                       }
                     }
                   ]
@@ -350,8 +351,8 @@ Or the opposite - being so fidgety or restless that you have been moving around 
                     {
                       "valueCoding" : {
                         "system" : "http://loinc.org",
-                        "code" : "LA6568-5",
-                        "display" : "Not at all"
+                        "code" : codes[5],
+                        "display" : answers[5]
                       }
                     }
                   ]
@@ -363,8 +364,8 @@ Or the opposite - being so fidgety or restless that you have been moving around 
                     {
                       "valueCoding" : {
                         "system" : "http://loinc.org",
-                        "code" : "LA6568-5",
-                        "display" : "Not at all"
+                        "code" : codes[6],
+                        "display" : answers[6]
                       }
                     }
                   ]
@@ -376,8 +377,8 @@ Or the opposite - being so fidgety or restless that you have been moving around 
                     {
                       "valueCoding" : {
                         "system" : "http://loinc.org",
-                        "code" : "LA6568-5",
-                        "display" : "Not at all"
+                        "code" : codes[7],
+                        "display" : answers[7]
                       }
                     }
                   ]
@@ -389,8 +390,8 @@ Or the opposite - being so fidgety or restless that you have been moving around 
                     {
                       "valueCoding" : {
                         "system" : "http://loinc.org",
-                        "code" : "LA6568-5",
-                        "display" : "Not at all"
+                        "code" : codes[8],
+                        "display" : answers[8]
                       }
                     }
                   ]
@@ -421,7 +422,9 @@ Or the opposite - being so fidgety or restless that you have been moving around 
             }
           ]
         }
-
+        client.create(phq_9);
+        alert("submitted successfully");
+      })
         
     </script>
 </html>
