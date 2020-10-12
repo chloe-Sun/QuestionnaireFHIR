@@ -191,7 +191,7 @@ Or the opposite - being so fidgety or restless that you have been moving around 
                     </div>
                 </div>
 
-                <button class = "question_button">Submit</button>
+                <button id="submit" class = "question_button">Submit</button>
 
             </div>
             <div class = "bottom">
@@ -203,6 +203,7 @@ Or the opposite - being so fidgety or restless that you have been moving around 
         </div>
     </body>
     <script>
+      document.getElementById("submit").addEventListener("click", function() {
         const client = JSON.parse(localStorage.getItem("client"));
         var answers = [];
         for (i = 0; i < 9; i++) {
@@ -215,6 +216,8 @@ Or the opposite - being so fidgety or restless that you have been moving around 
           }
         };
         console.log(answers);
+      })
+        
         const phq_9 = {
           "resourceType" : "QuestionnaireResponse",
           "id" : "questionnaireresponse-phq9-" + client.patient.id,
