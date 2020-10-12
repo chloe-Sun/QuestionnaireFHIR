@@ -60,7 +60,7 @@
       document.getElementById("postcode").innerText = postCode;
       console.log(questionnaire.length);
 
-      if (typeof(questionnaire) != undefined) {
+      if (questionnaire !== "No questionnaire found for the selected patient") {
         questionnaire = JSON.parse(questionnaire);
         for (i = 0; i < questionnaire.length; i++) {
           var div = document.createElement("div");
