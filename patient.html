@@ -6,30 +6,43 @@
 <body>
   <div class = "app">
       <div class = "header">
-          <h1>Patient 1</h1>
+          <h1>Patient Detail</h1>
       </div>
 
-      <div class = "main">
+      <div class = "patient">
         <div class="cont form">
           <h3>Patient Information</h3>
           <table>
-                  <tr><td>ID: </td><td id=patientId></td></tr>
-                  <tr><td>Name: </td><td id=name></td></tr>
-                  <tr><td>Gender: </td><td id=gender></td></tr>
-                  <tr><td>Date Of Birth: </td><td id=dob></td></tr>
-                  <tr><td>Address: </td><td id=address></td></tr>
-                  <tr><td>PostalCode: </td><td id=postcode></td></tr>
+                  <tr><td>ID: </td><td id = "patientId"></td></tr>
+                  <tr><td>Name: </td><td id = "name"></td></tr>
+                  <tr><td>Gender: </td><td id = "gender"></td></tr>
+                  <tr><td>Date Of Birth: </td><td id= "dob"></td></tr>
+                  <tr><td>Address: </td><td id= "address"></td></tr>
+                  <tr><td>PostalCode: </td><td id= "postcode"></td></tr>
               </table>
         </div>
-        <div class="cont">
-          <h3>Questionaire Completed</h3>
-          <div id="ques"></div>
+        <div class = "questionnaire_part1">
+            <h3>Questionaire Completed</h3>
+            <div id = "ques"></div>
         </div>
-        <div>
+        <div class = "questionnaire_part2">
           <h3>Questionnaire to Complete</h3>
-          <a href=phq-9.html>PHQ-9</a>
-          <a href=>k-10</a>
-          <a href=>AUSDRISK</a>
+          <div class = "click_area">
+              <div class = "click">
+                  <a href="phq-9.html">PHQ-9</a>
+                  <img src = "./images/click.png" width = "20px" height = "20px">
+              </div>
+              <hr>
+              <div class = "click">
+                  <a href="k-10.html">K-10</a>
+                  <img src = "./images/click.png" width = "20px" height = "20px">
+              </div>
+              <hr>
+              <div class = "click">
+                  <a href="">AUSDRISK</a>
+                  <img src = "./images/click.png" width = "20px" height = "20px">
+              </div>
+          </div>
         </div>
       </div>
 
