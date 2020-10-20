@@ -242,4 +242,26 @@ body {
     cursor: pointer;
 }
 
+.answer {
+    margin-top: 20px;
+}
 
+
+.grade {
+    background-color:#F4F6F6;
+    height:auto;
+    margin:30 10 10 10px;
+    border-radius: 3%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    padding:20px;
+}
+
+.grade input{
+    background-color:#F4F6F6;
+    width: 35px;
+    margin-left: 10px;
+    text-align: center;
+}
