@@ -232,6 +232,8 @@ Or the opposite - being so fidgety or restless that you have been moving around 
         console.log(codes);
         
         const date = new Date();
+        var month = date.getMonth() + 1;
+        month = month < 10 ? '0' + month : '' + month;
         const phq_9 = {
           "resourceType" : "QuestionnaireResponse",
           "id" : "questionnaireresponse-phq9-" + client.patient.id,
@@ -266,7 +268,7 @@ Or the opposite - being so fidgety or restless that you have been moving around 
           "context" : {
             "reference" : "Encounter/encounter1"
           },
-          "authored" : date.getFullYear() + "-" + date.getMonth() + "-" + date.getDate(),
+          "authored" : date.getFullYear() + "-" + month + "-" + date.getDate(),
           "author" : {
             "reference" : "Practitioner/" + client.user.id
           },

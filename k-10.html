@@ -291,6 +291,8 @@
                 }
             }
             const date = new Date();
+            var month = date.getMonth() + 1;
+            month = month < 10 ? '0' + month : '' + month;
             const k_10 = {
                 "resourceType" : "QuestionnaireResponse",
                 "id" : "questionnaireresponse-phq9-" + client.patient.id,
@@ -325,7 +327,7 @@
                 "context" : {
                     "reference" : "Encounter/encounter1"
                 },
-                "authored" : date.getFullYear() + "-" + date.getMonth() + "-" + date.getDate(),
+                "authored" : date.getFullYear() + "-" + month + "-" + date.getDate(),
                 "author" : {
                     "reference" : "Practitioner/" + client.user.id
                 },
