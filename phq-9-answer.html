@@ -78,6 +78,7 @@ Or the opposite - being so fidgety or restless that you have been moving around 
         for (i = 1; i < answers.length; i++) {
             var id = "Q" + (i);
             document.getElementById(id).innerText = answers[i].answer[0].valueCoding.display;
+            console.log(answers[i]);
             var answerCode = answers[i].answer[0].valueCoding.code;
             if (answerCode == "LA6568-5") {
                     grade += 0;
