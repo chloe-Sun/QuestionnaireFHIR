@@ -71,7 +71,6 @@
       document.getElementById("dob").innerText = birth;
       document.getElementById("address").innerText = address;
       document.getElementById("postcode").innerText = postCode;
-      console.log(questionnaire.length);
 
       if (questionnaire !== "No questionnaire found for the selected patient") {
         questionnaire = JSON.parse(questionnaire);
@@ -79,7 +78,7 @@
           var div = document.createElement("div");
           var content = questionnaire[i];
           console.log(content.resource);
-          var title = questionnaire[i].resource.identifier.value;
+          var title = content.identifier.value;
           var quesName;
           if (title == "questionnaireresponse-example-phq9") {
             quesName = "phq-9";
