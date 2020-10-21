@@ -89,7 +89,7 @@
             quesName = "k-10";
             document.getElementById("k-10").style.display = "none";
             link.href = "k-10-answer.html";
-            localStorage.setItem("k10-answer",JSON.stringify(questionnaire[i].resource.item));
+            localStorage.setItem("k10-answer",JSON.stringify(questionnaire[i].resource.item[0].item));
           } else {
             quesName = "AUSDRISK";
             document.getElementById("AUSDRISK").style.display = "none";
