@@ -77,7 +77,7 @@
         for (i = 0; i < questionnaire.length; i++) {
           var div = document.createElement("div");
           var content = questionnaire[i];
-          console.log(content.resource.identifier);
+          console.log(content.resource.identifier.value);
           var title = content.identifier.value;
           var quesName;
           if (title == "questionnaireresponse-example-phq9") {
