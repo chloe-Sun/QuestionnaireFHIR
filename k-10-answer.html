@@ -62,7 +62,7 @@
 
                 <div class = "grade">
                     <p id=score>Grade:</p>
-                    <input type = "number">
+                    <!-- <input type = "number"> -->
                     <p id=result></p>
                 </div>
 
@@ -94,7 +94,7 @@
                     grade += 5;
                 }
         }
-        document.getElementById("score").innerText = grade;
+        document.getElementById("score").innerText = "Grade: " + grade;
         if (9 < grade && grade < 16) {
             document.getElementById("result").innerText = "Low level of psychological distress";
         } else if (15 < grade && grade < 22) {
