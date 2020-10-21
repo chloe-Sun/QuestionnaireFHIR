@@ -74,6 +74,7 @@
 
       if (questionnaire !== "No questionnaire found for the selected patient") {
         questionnaire = JSON.parse(questionnaire);
+        console.log(questionnaire.length);
         for (i = 0; i < questionnaire.length; i++) {
           var div = document.createElement("div");
           var content = questionnaire[i];
