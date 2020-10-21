@@ -12,52 +12,52 @@
                 <h2><i>K10 Patient Answers:</i></h2>
                 <div class = "question">
                     <p>Q1: Feeling tired out for no good reasons?</p>
-                    <p class = "answer">{{K10_q1}}</p>
+                    <p id=Q1 class = "answer">{{K10_q1}}</p>
                 </div>
 
                 <div class = "question">
                     <p>Q2: Feeling nervous?</p>
-                    <p class = "answer">{{K10_q2}}</p>
+                    <p id=Q2 class = "answer">{{K10_q2}}</p>
                 </div>
 
                 <div class = "question">
                     <p>Q3: Feeling so nervous that nothing could calm you down?</p>
-                    <p class = "answer">{{K10_q3}}</p>
+                    <p id=Q3 class = "answer">{{K10_q3}}</p>
                 </div>
 
                 <div class = "question">
                     <p>Q4: Feeling hopeless?</p>
-                    <p class = "answer">{{K10_q4}}</p>
+                    <p id=Q4 class = "answer">{{K10_q4}}</p>
                 </div>
 
                 <div class = "question">
                     <p>Q5: Feeling restless or fidgety?</p>
-                    <p class = "answer">{{K10_q5}}</p>
+                    <p id=Q5 class = "answer">{{K10_q5}}</p>
                 </div>
 
                 <div class = "question">
                     <p>Q6: Feeling so restless you could not sit still?</p>
-                    <p class = "answer">{{K10_q6}}</p>
+                    <p id=Q6 class = "answer">{{K10_q6}}</p>
                 </div>
 
                 <div class = "question">
                     <p>Q7: Feeling depressed?</p>
-                    <p class = "answer">{{k5_q7}}</p>
+                    <p id=Q7 class = "answer">{{k5_q7}}</p>
                 </div>
 
                 <div class = "question">
                     <p>Q8: Feeling everything was an effort</p>
-                    <p class = "answer">{{k10_q8}}</p>
+                    <p id=Q8 class = "answer">{{k10_q8}}</p>
                 </div>
 
                 <div class = "question">
                     <p>Q9: Feeling so sad that nothing could cheer you up?</p>
-                    <p class = "answer">{{k10_q9}}</p>
+                    <p id=Q9 class = "answer">{{k10_q9}}</p>
                 </div>
 
                 <div class = "question">
                     <p>Q10: Feeling worthless?</p>
-                    <p class = "answer">{{k10_q10}}</p>
+                    <p id=Q10 class = "answer">{{k10_q10}}</p>
                 </div>
 
                 <div class = "grade">
@@ -74,4 +74,12 @@
           </div>
         </div>
     </body>
+    <script>
+        var answers = JSON.parse(localStorage.getItem("k10-answer"));
+        for (i = 0; i < answers.length; i++) {
+            var id = "Q" + (i+1);
+            document.getElementById(id).innerText = answers[i].answer[0].valueCoding.display;
+        }
+
+    </script>
 </html>
