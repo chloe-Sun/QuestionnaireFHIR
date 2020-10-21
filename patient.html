@@ -74,7 +74,6 @@
 
       if (questionnaire !== "No questionnaire found for the selected patient") {
         questionnaire = JSON.parse(questionnaire);
-        console.log(questionnaire.length);
         for (i = 0; i < questionnaire.length; i++) {
           var div = document.createElement("div");
           var content = questionnaire[i];
@@ -86,10 +85,10 @@
             quesName = "phq-9";
             document.getElementById("phq-9").style.display = "none";
           } else if (title == "k-10 response") {
-            questionnaire = "k-10";
+            quesName = "k-10";
             document.getElementById("k-10").style.display = "none";
           } else {
-            questionnaire = "AUSDRISK";
+            quesName = "AUSDRISK";
             document.getElementById("AUSDRISK").style.display = "none";
           }
           div.innerText = quesName;
