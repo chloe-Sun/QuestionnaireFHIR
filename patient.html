@@ -84,12 +84,13 @@
             quesName = "phq-9";
             document.getElementById("phq-9").style.display = "none";
             link.href = "phq-9-answer.html";
-            localStorage.setItem("phq-answer",JSON.stringify(questionnaire[i].resource.item));
+            localStorage.setItem("k10-answer",JSON.stringify(questionnaire[i].resource.item[0].item));
           } else if (title == "k-10 response") {
             quesName = "k-10";
             document.getElementById("k-10").style.display = "none";
             link.href = "k-10-answer.html";
-            localStorage.setItem("k10-answer",JSON.stringify(questionnaire[i].resource.item[0].item));
+            localStorage.setItem("phq-answer",JSON.stringify(questionnaire[i].resource.item));
+        
           } else {
             quesName = "AUSDRISK";
             document.getElementById("AUSDRISK").style.display = "none";
