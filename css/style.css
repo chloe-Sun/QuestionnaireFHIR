@@ -11,8 +11,16 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    line-height: 80px;
+    /* line-height: 80px; */
     font-size: 0.9em;
+}
+
+.header h1 {
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-align: center;
 }
 .app {
     height:100%;
