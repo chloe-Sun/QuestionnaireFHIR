@@ -290,6 +290,7 @@
                     answers.push("All of the time");
                 }
             }
+            const date = new Date();
             const k_10 = {
                 "resourceType" : "QuestionnaireResponse",
                 "id" : "questionnaireresponse-phq9-" + client.patient.id,
@@ -324,7 +325,7 @@
                 "context" : {
                     "reference" : "Encounter/encounter1"
                 },
-                "authored" : new Date().toLocaleDateString,
+                "authored" : date.getFullYear() + "-" + date.getMonth() + "-" + date.getDate(),
                 "author" : {
                     "reference" : "Practitioner/" + client.user.id
                 },

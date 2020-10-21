@@ -231,8 +231,7 @@ Or the opposite - being so fidgety or restless that you have been moving around 
         console.log(answers);
         console.log(codes);
         
-      
-      
+        const date = new Date();
         const phq_9 = {
           "resourceType" : "QuestionnaireResponse",
           "id" : "questionnaireresponse-phq9-" + client.patient.id,
@@ -267,7 +266,7 @@ Or the opposite - being so fidgety or restless that you have been moving around 
           "context" : {
             "reference" : "Encounter/encounter1"
           },
-          "authored" : new Date().toLocaleDateString(),
+          "authored" : date.getFullYear() + "-" + date.getMonth() + "-" + date.getDate(),
           "author" : {
             "reference" : "Practitioner/" + client.user.id
           },
