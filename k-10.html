@@ -293,24 +293,24 @@
             const k_10 = {
                 "resourceType" : "QuestionnaireResponse",
                 "id" : "questionnaireresponse-phq9-" + client.patient.id,
-                "meta" : {
-                    "profile" : [
-                    "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/argo-questionnaireresponse"
-                    ]
-                },
+                // "meta" : {
+                //     "profile" : [
+                //     "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/argo-questionnaireresponse"
+                //     ]
+                // },
                 "text" : {
                     "status" : "generated",
                     "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div class=\"hapiHeaderText\">Fran <b>AJUSTED </b></div><table class=\"hapiPropertyTable\"><tbody/></table></div>"
                 },
-                "extension" : [
-                    {
-                    "url" : "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-responsePeriod",
-                    "valuePeriod" : {
-                        "start" : "2019-02-13T00:36:07.985403Z",
-                        "end" : "2019-02-13T00:36:41.051113Z"
-                    }
-                    }
-                ],
+                // "extension" : [
+                //     {
+                //     "url" : "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-responsePeriod",
+                //     "valuePeriod" : {
+                //         "start" : "2019-02-13T00:36:07.985403Z",
+                //         "end" : "2019-02-13T00:36:41.051113Z"
+                //     }
+                //     }
+                // ],
                 "identifier" : {
                     "value" : "questionnaireresponse-example-phq9"
                 },
@@ -324,7 +324,7 @@
                 "context" : {
                     "reference" : "Encounter/encounter1"
                 },
-                "authored" : "2019-02-13T00:36:41.051113Z",
+                "authored" : new Date().toLocaleDateString,
                 "author" : {
                     "reference" : "Practitioner/" + client.user.id
                 },

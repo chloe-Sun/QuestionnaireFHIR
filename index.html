@@ -42,50 +42,59 @@
 
             localStorage.setItem("client", JSON.stringify(client));
 
-        client.patient.read().then(
-            function(pt) {
-                localStorage.setItem("patientInfo",JSON.stringify(pt, null, 4));
-                console.log(pt);
-            },
-            function(error) {
-                document.getElementById("patient").innerText = error.stack;
+            const phq_9 = localStorage.getItem("phq-9");
+            if (phq_9) {
+                console.log(phq_9);
+                client.create(JSON.parse(phq_9));
+                localStorage.removeItem("phq-9");
             }
-        );
 
-        client.user.read().then(
-            function(ur) {
-                localStorage.setItem("userInfo",JSON.stringify(ur,null,4));
-                console.log(ur);
-            },
-            function(error) {
-                console.log("get user info failed");
+            const k_10 = localStorage.getItem("k-10");
+            if (k_10) {
+                console.log(k_10);
+                client.create(JSON.parse(k_10));
+                localStorage.removeItem("k-10");
             }
-        )
+
+            client.patient.read().then(
+                function(pt) {
+                    localStorage.setItem("patientInfo",JSON.stringify(pt, null, 4));
+                    console.log(pt);
+                },
+                function(error) {
+                    document.getElementById("patient").innerText = error.stack;
+                }
+            );
+
+            client.user.read().then(
+                function(ur) {
+                    localStorage.setItem("userInfo",JSON.stringify(ur,null,4));
+                    console.log(ur);
+                },
+                function(error) {
+                    console.log("get user info failed");
+                }
+            )
 
 
-        client.request("/QuestionnaireResponse?patient=" + client.patient.id, {
-            resolveReferences: [ "QuestionnaireResponseReference" ],
-            graph: true
-        })
-        
-
-        .then(function(data) {
-            localStorage.setItem("questionnaire", JSON.stringify(data.entry));
-            console.log(localStorage.getItem("questionnaire"))
-            if (!data.entry || !data.entry.length) {
-                localStorage.setItem("questionnaire", "No questionnaire found for the selected patient");
-                // throw new Error("No questionnaire found for the selected patient");
-            }
-            return data.entry;
+            client.request("/QuestionnaireResponse?patient=" + client.patient.id, {
+                resolveReferences: [ "QuestionnaireResponseReference" ],
+                graph: true
+            })
             
-        });
 
-        const phq_9 = localStorage.getItem("phq-9");
-        if (phq_9) {
-            console.log(phq_9);
-            client.create(JSON.parse(phq_9));
-            localStorage.removeItem("phq-9");
-        }
+            .then(function(data) {
+                localStorage.setItem("questionnaire", JSON.stringify(data.entry));
+                console.log(localStorage.getItem("questionnaire"))
+                if (!data.entry || !data.entry.length) {
+                    localStorage.setItem("questionnaire", "No questionnaire found for the selected patient");
+                    // throw new Error("No questionnaire found for the selected patient");
+                }
+                return data.entry;
+                
+            });
+
+        
 
 
         }).catch(console.error);
