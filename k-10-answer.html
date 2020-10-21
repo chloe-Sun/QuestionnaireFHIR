@@ -63,6 +63,7 @@
                 <div class = "grade">
                     <p id=score>Grade:</p>
                     <input type = "number">
+                    <p id=result></p>
                 </div>
 
             </div>
@@ -94,5 +95,14 @@
                 }
         }
         document.getElementById("score").innerText = grade;
+        if (9 < grade && grade < 16) {
+            document.getElementById("result").innerText = "Low level of psychological distress";
+        } else if (15 < grade && grade < 22) {
+            document.getElementById("result").innerText = "Moderate level of psychological distress";
+        } else if (22 < grade && grade < 30) {
+            document.getElementById("result").innerText = "High level of psychological distress";
+        } else if (30 < grade && grade < 51) {
+            document.getElementById("result").innerText = "Very high level of psychological distress";
+        }
     </script>
 </html>
