@@ -267,7 +267,7 @@
         const client = JSON.parse(localStorage.getItem("client"));
         console.log(client);  
         document.getElementById("submit").addEventListener("click", function() {
-            for (i = 0; i < 9; i++) {
+            for (i = 0; i < 10; i++) {
                 const name = "select" + (i+1);
                 var choices = document.getElementsByName(name);
                 console.log(choices);
@@ -277,7 +277,7 @@
                     }
                 }
             }
-            for (i = 0; i < 9; i++) {
+            for (i = 0; i < 10; i++) {
                 const code = codes[i];
                 if (code == "LA6297-1") {
                     answers.push("None of the time");
