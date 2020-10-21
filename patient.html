@@ -77,6 +77,8 @@
         questionnaire = JSON.parse(questionnaire);
         for (i = 0; i < questionnaire.length; i++) {
           var div = document.createElement("div");
+          var content = questionnaire[i];
+          console.log(content.resource);
           var title = questionnaire[i].resource.identifier.value;
           var quesName;
           if (title == "questionnaireresponse-example-phq9") {
