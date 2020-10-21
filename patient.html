@@ -21,24 +21,24 @@
                   <tr><td>PostalCode: </td><td id= "postcode"></td></tr>
               </table>
         </div>
-        <div class = "questionnaire_part1">
+        <div id = "ques" class = "questionnaire_part1">
             <h3>Questionaire Completed</h3>
             <div id = "ques"></div>
         </div>
         <div class = "questionnaire_part2">
           <h3>Questionnaire to Complete</h3>
           <div class = "click_area">
-              <div class = "click">
+              <div id = "phq-9" class = "click">
                   <a href="phq-9.html">PHQ-9</a>
                   <img src = "./images/click.png" width = "20px" height = "20px">
               </div>
               <hr>
-              <div class = "click">
+              <div id = "k-10" class = "click">
                   <a href="k-10.html">K-10</a>
                   <img src = "./images/click.png" width = "20px" height = "20px">
               </div>
               <hr>
-              <div class = "click">
+              <div id="AUSDRISK" class = "click">
                   <a href="">AUSDRISK</a>
                   <img src = "./images/click.png" width = "20px" height = "20px">
               </div>
@@ -77,21 +77,32 @@
         questionnaire = JSON.parse(questionnaire);
         for (i = 0; i < questionnaire.length; i++) {
           var div = document.createElement("div");
-          div.style.border = "2px solid red";
           var title = questionnaire[i].resource.identifier.value;
-          div.appendChild(document.createTextNode(title));
-          var content = document.createElement("div");
-          content.innerHTML = questionnaire[i].resource.text.div;
-          content.style.display = "none";
-          div.appendChild(content);
+          var quesName;
+          if (title == "questionnaireresponse-example-phq9") {
+            quesName = "phq-9";
+            document.getElementById("phq-9").style.display = "none";
+          } else if (title == "k-10 response") {
+            questionnaire = "k-10";
+            document.getElementById("k-10").style.display = "none";
+          } else {
+            questionnaire = "AUSDRISK";
+            document.getElementById("AUSDRISK").style.display = "none";
+          }
+          div.innerText = quesName;
           document.getElementById("ques").appendChild(div);
-          div.addEventListener("click", function() {
-            if (content.style.display == "none") {
-              content.style.display = "block";
-            } else {
-              content.style.display = "none";
-            }
-          })
+          // var content = document.createElement("div");
+          // content.innerHTML = questionnaire[i].resource.text.div;
+          // content.style.display = "none";
+          // div.appendChild(content);
+          
+          // div.addEventListener("click", function() {
+          //   if (content.style.display == "none") {
+          //     content.style.display = "block";
+          //   } else {
+          //     content.style.display = "none";
+          //   }
+          // })
         }
       }
       // console.log(localStorage.getItem("questionnaire"));
