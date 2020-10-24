@@ -72,7 +72,10 @@ Or the opposite - being so fidgety or restless that you have been moving around 
           </div>
         </div>
     </body>
-    <script>
+    <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+<!-- Include fusion theme -->
+    <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
+    <script type="text/javascript">
         var answers = JSON.parse(localStorage.getItem("phq-answer"));
         var grade = 0;
         for (i = 1; i < 10; i++) {
@@ -102,5 +105,62 @@ Or the opposite - being so fidgety or restless that you have been moving around 
         } else if (20 <= grade && grade <= 27) {
             document.getElementById("result").innerText = "Severe depression severity"
         }
+
+        const dials = {
+            "dial": [{
+                "value": grade
+            }]
+        }
+        const colorRange = {
+            "color": [{
+                "minValue": "0",
+                "maxValue": "4",
+                "code": "#62B58F"
+                },{
+                "minValue": "5",
+                "maxValue": "9",
+                "code": "#FFC533"
+                },{
+                "minValue": "10",
+                "maxValue": "14",
+                "code": "#FF6733"
+                },{
+                "minValue": "15",
+                "maxValue": "19",
+                "code": "#F2726F"
+                },{
+                "minValue": "20",
+                "maxValue": "27",
+                "code": "#842707"
+            }]
+        }
+
+        var chartConfigurations = {
+            type: 'angulargauge', // The gauge type
+            width: '450', // Width of the gauge
+            height: '250', // Height of the gauge
+            dataFormat: 'json', // Data type
+            renderAt:'chart-container', //Container where the chart will render
+            dataSource: {
+                // Gauge Configuration
+                "chart": {
+                    "caption": "Score",
+                    "lowerLimit": "0",
+                    "upperLimit": "27",
+                    "showValue": "1",
+                    "numberSuffix": "",
+                    "theme": "fusion",
+                    "showToolTip": "0"
+                },
+                // Chart Data
+                "colorRange": colorRange,
+                "dials": dials
+            }
+        }
+
+        FusionCharts.ready(function(){
+            var fusioncharts = new FusionCharts(chartConfigurations);
+        fusioncharts.render();
+        });
     </script>
 </html>
