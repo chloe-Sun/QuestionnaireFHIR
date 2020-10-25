@@ -71,7 +71,7 @@
       document.getElementById("dob").innerText = birth;
       document.getElementById("address").innerText = address;
       document.getElementById("postcode").innerText = postCode;
-
+      
       if (questionnaire !== "No questionnaire found for the selected patient") {
         questionnaire = JSON.parse(questionnaire);
         for (i = 0; i < questionnaire.length; i++) {
@@ -82,37 +82,21 @@
           var quesName;
           if (title == "questionnaireresponse-example-phq9") {
             quesName = "phq-9";
-            document.getElementById("phq-9").style.display = "none";
             link.href = "phq-9-answer.html";
             localStorage.setItem("phq-answer",JSON.stringify(questionnaire[i].resource.item[0].item));
           } else if (title == "k-10 response") {
             quesName = "k-10";
-            document.getElementById("k-10").style.display = "none";
             link.href = "k-10-answer.html";
             localStorage.setItem("k10-answer",JSON.stringify(questionnaire[i].resource.item));
           } else {
             quesName = "AUSDRISK";
-            document.getElementById("AUSDRISK").style.display = "none";
             link.href = "AUSDRISK-answer.html";
             localStorage.setItem("AUSDRISK-answer",JSON.stringify(questionnaire[i].resource.item));
           }
           link.innerText = quesName;
           div.appendChild(link);
           document.getElementById("ques").appendChild(div);
-          // var content = document.createElement("div");
-          // content.innerHTML = questionnaire[i].resource.text.div;
-          // content.style.display = "none";
-          // div.appendChild(content);
-          
-          // div.addEventListener("click", function() {
-          //   if (content.style.display == "none") {
-          //     content.style.display = "block";
-          //   } else {
-          //     content.style.display = "none";
-          //   }
-          // })
         }
       }
-      // console.log(localStorage.getItem("questionnaire"));
   </script>
 </html>
