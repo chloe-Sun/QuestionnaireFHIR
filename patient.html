@@ -81,7 +81,8 @@
           console.log(title);
           var quesName;
           if (title == "questionnaireresponse-example-phq9") {
-            quesName = "phq-9: " + questionnaire[i].resource.meta.lastUpdated;
+            var time = questionnaire[i].resource.meta.lastUpdated
+            quesName = "phq-9: " + time.split(".")[0];
             link.href = "phq-9-answer.html";
             localStorage.setItem("phq-answer",JSON.stringify(questionnaire[i].resource.item[0].item));
           } else if (title == "k-10 response") {
