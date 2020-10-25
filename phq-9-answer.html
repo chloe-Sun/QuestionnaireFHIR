@@ -151,7 +151,7 @@ Or the opposite - being so fidgety or restless that you have been moving around 
             }]
         }
 
-        var chartConfigurations = {
+        const chartConfigurations = {
             type: 'angulargauge', // The gauge type
             width: '450', // Width of the gauge
             height: '250', // Height of the gauge
@@ -214,7 +214,7 @@ Or the opposite - being so fidgety or restless that you have been moving around 
 
         FusionCharts.ready(function(){
             var fusioncharts = new FusionCharts(chartConfigurations);
-            var barcharts = new FusionCharts(chartConfig);
+            var barcharts = new FusionCharts(barConfig);
         fusioncharts.render();
         barcharts.render();
         });
