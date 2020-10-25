@@ -11,48 +11,48 @@
             <div class = "questionnaire">
                 <h2><i>PHQ-9 Patient Answers:</i></h2>
                 <div class = "question">
-                    <p>Q1: Little interest or pleasure in doing things?</p>
+                    <p id = A1>Q1: Little interest or pleasure in doing things?</p>
                     <p id = Q1 class = "answer">{{phq_q1}}</p>
                 </div>
 
                 <div class = "question">
-                    <p>Q2: Feeling down, depressed, or hopeless?</p>
+                    <p id = A2>Q2: Feeling down, depressed, or hopeless?</p>
                     <p id = Q2 class = "answer">{{phq_q2}}</p>
                 </div>
 
                 <div class = "question">
-                    <p>Q3: Trouble falling or staying asleep, or sleeping too much?</p>
+                    <p id = A3>Q3: Trouble falling or staying asleep, or sleeping too much?</p>
                     <p id = Q3 class = "answer">{{phq_q3}}</p>
                 </div>
 
                 <div class = "question">
-                    <p>Q4: Feeling tired or having little energy?</p>
+                    <p id = A4>Q4: Feeling tired or having little energy?</p>
                     <p id = Q4 class = "answer">{{phq_q4}}</p>
                 </div>
 
                 <div class = "question">
-                    <p>Q5: Poor appetite or overeating?</p>
+                    <p id = A5>Q5: Poor appetite or overeating?</p>
                     <p id = Q5 class = "answer">{{phq_q5}}</p>
                 </div>
 
                 <div class = "question">
-                    <p>Q6: Feeling bad about yourself - or that you are a failure or have let yourself or your family down?</p>
+                    <p id = A6>Q6: Feeling bad about yourself - or that you are a failure or have let yourself or your family down?</p>
                     <p id = Q6 class = "answer">{{phq_q6}}</p>
                 </div>
 
                 <div class = "question">
-                    <p>Q7: Trouble concentrating on things, such as reading the newspaper or watching television?</p>
+                    <p id = A7>Q7: Trouble concentrating on things, such as reading the newspaper or watching television?</p>
                     <p id = Q7 class = "answer">{{phq_q7}}</p>
                 </div>
 
                 <div class = "question">
-                    <p>Q8: Moving or speaking so slowly that other people could have noticed?
+                    <p id = A8>Q8: Moving or speaking so slowly that other people could have noticed?
 Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual?</p>
                     <p id = Q8 class = "answer">{{phq_q8}}</p>
                 </div>
 
                 <div class = "question">
-                    <p>Q9: Thoughts that you would be better off dead, or of hurting yourself in some way?</p>
+                    <p id = A9>Q9: Thoughts that you would be better off dead, or of hurting yourself in some way?</p>
                     <p id = Q9 class = "answer">{{phq_q9}}</p>
                 </div>
 
@@ -69,6 +69,11 @@ Or the opposite - being so fidgety or restless that you have been moving around 
 
                 <div id="bar-container">
 
+                </div>
+
+                <div>
+                    <p>Questions need to pay closer attention to</p>
+                    <div  id="everyday-question"></div>
                 </div>
 
             </div>
@@ -107,6 +112,9 @@ Or the opposite - being so fidgety or restless that you have been moving around 
             } else if (answerCode == "LA6570-1") {
                     grade += 3;
                     everyday += 1;
+                    var p = document.createElement("p");
+                    p.innerText = document.getElementById("A"+i).innerText;
+                    document.getElementById("everyday-question").appendChild(p);
             } 
         }
         document.getElementById("score").innerText = "Grade: " + grade;
@@ -202,7 +210,6 @@ Or the opposite - being so fidgety or restless that you have been moving around 
             dataSource: {
                 chart: {
                 caption: "Answer Distribution",
-                // subCaption: "In MMbbl = One Million barrels",
                 xAxisName: "Answer",
                 yAxisName: "Number",
                 numberSuffix: "",
