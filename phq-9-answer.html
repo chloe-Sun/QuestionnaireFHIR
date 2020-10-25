@@ -89,7 +89,8 @@ Or the opposite - being so fidgety or restless that you have been moving around 
 <!-- Include fusion theme -->
     <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
     <script type="text/javascript">
-        var answers = JSON.parse(localStorage.getItem("phq-answer"));
+        const index = localStorage.getItem("currentPhq");
+        var answers = JSON.parse(localStorage.getItem("phq-answer"))[index];
         var grade = 0;
         var not_at_all = 0;
         var several_days = 0;

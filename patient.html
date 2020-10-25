@@ -72,6 +72,7 @@
       document.getElementById("address").innerText = address;
       document.getElementById("postcode").innerText = postCode;
       
+      var phq_list = [];
       if (questionnaire !== "No questionnaire found for the selected patient") {
         questionnaire = JSON.parse(questionnaire);
         for (i = 0; i < questionnaire.length; i++) {
@@ -84,9 +85,16 @@
             var time = questionnaire[i].resource.meta.lastUpdated
             quesName = "phq-9: " + time.split(".")[0];
             link.href = "phq-9-answer.html";
-            localStorage.setItem("phq-answer",JSON.stringify(questionnaire[i].resource.item[0].item));
+            const length = phq_list.length;
+            link.addEventListener("click", function() {
+              localStorage.setItem("currentPhq",length);
+            });
+            phq_list.push(questionnaire[i].resource.item[0].item);
+            localStorage.setItem("phq-answer",JSON.stringify(phq_list));
+            // localStorage.setItem("phq-answer",JSON.stringify(questionnaire[i].resource.item[0].item));
           } else if (title == "k-10 response") {
-            quesName = "k-10";
+            var time = questionnaire[i].resource.meta.lastUpdated
+            quesName = "k-10: " + time.split(".")[0];
             link.href = "k-10-answer.html";
             localStorage.setItem("k10-answer",JSON.stringify(questionnaire[i].resource.item));
           } else {
