@@ -73,6 +73,7 @@
       document.getElementById("postcode").innerText = postCode;
       
       var phq_list = [];
+      var k10_list = [];
       if (questionnaire !== "No questionnaire found for the selected patient") {
         questionnaire = JSON.parse(questionnaire);
         for (i = 0; i < questionnaire.length; i++) {
@@ -96,7 +97,13 @@
             var time = questionnaire[i].resource.meta.lastUpdated
             quesName = "k-10: " + time.split(".")[0];
             link.href = "k-10-answer.html";
-            localStorage.setItem("k10-answer",JSON.stringify(questionnaire[i].resource.item));
+            const length = k10_list.length;
+            link.addEventListener("click", function() {
+              localStorage.setItem("currentK10",length);
+            });
+            k10_list.push(questionnaire[i].resource.item);
+            localStorage.setItem("k10",JSON.stringify(k10_list));
+            // localStorage.setItem("k10-answer",JSON.stringify(questionnaire[i].resource.item));
           } else {
             quesName = "AUSDRISK";
             link.href = "AUSDRISK-answer.html";
