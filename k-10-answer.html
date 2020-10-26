@@ -10,72 +10,82 @@
                 </div>
             <div class = "questionnaire">
                 <h2><i>K10 Patient Answers:</i></h2>
-                <div class = "question">
-                    <p id = A1>Q1: Feeling tired out for no good reasons?</p>
-                    <p id=Q1 class = "answer">{{K10_q1}}</p>
+                <div class = "button_ans">
+                    <button  style="background-color:#4D5656; color: #fff;" id = "answer_button1">Answer</button>
+                    <button id = "answer_button2">Chart</button>
+                </div>
+                <div id = "answer_content">
+                    <div id = "answer_word" style="display: block;">
+                        <div class = "question">
+                            <p id = "A1">Q1: Feeling tired out for no good reasons?</p>
+                            <p id= "Q1" class = "answer">{{K10_q1}}</p>
+                        </div>
+
+                        <div class = "question">
+                            <p id = "A2">Q2: Feeling nervous?</p>
+                            <p id = "Q2" class = "answer">{{K10_q2}}</p>
+                        </div>
+
+                        <div class = "question">
+                            <p id = "A3">Q3: Feeling so nervous that nothing could calm you down?</p>
+                            <p id = "Q3" class = "answer">{{K10_q3}}</p>
+                        </div>
+
+                        <div class = "question">
+                            <p id = "A4">Q4: Feeling hopeless?</p>
+                            <p id = "Q4" class = "answer">{{K10_q4}}</p>
+                        </div>
+
+                        <div class = "question">
+                            <p id = "A5">Q5: Feeling restless or fidgety?</p>
+                            <p id = "Q5" class = "answer">{{K10_q5}}</p>
+                        </div>
+
+                        <div class = "question">
+                            <p id = "A6">Q6: Feeling so restless you could not sit still?</p>
+                            <p id = "Q6" class = "answer">{{K10_q6}}</p>
+                        </div>
+
+                        <div class = "question">
+                            <p id = "A7">Q7: Feeling depressed?</p>
+                            <p id = "Q7" class = "answer">{{k5_q7}}</p>
+                        </div>
+
+                        <div class = "question">
+                            <p id = "A8">Q8: Feeling everything was an effort</p>
+                            <p id = "Q8" class = "answer">{{k10_q8}}</p>
+                        </div>
+
+                        <div class = "question">
+                            <p id = "A9">Q9: Feeling so sad that nothing could cheer you up?</p>
+                            <p id = "Q9" class = "answer">{{k10_q9}}</p>
+                        </div>
+
+                        <div class = "question">
+                            <p id = "A10">Q10: Feeling worthless?</p>
+                            <p id = "Q10" class = "answer">{{k10_q10}}</p>
+                        </div>
+
+                        <div class = "grade">
+                            <p id= "score">Grade:</p>
+                            <!-- <input type = "number"> -->
+                            <br>
+                            <p id = "result"></p>
+                        </div>
+                    </div>
+                    <div id = "answer_chart">
+
+                        <div id="chart-container">
+                            
+                        </div>
+
+                        <div id="bar-container">
+
+                        </div>
+                    </div>
                 </div>
 
-                <div class = "question">
-                    <p id = A2>Q2: Feeling nervous?</p>
-                    <p id=Q2 class = "answer">{{K10_q2}}</p>
-                </div>
-
-                <div class = "question">
-                    <p id = A3>Q3: Feeling so nervous that nothing could calm you down?</p>
-                    <p id=Q3 class = "answer">{{K10_q3}}</p>
-                </div>
-
-                <div class = "question">
-                    <p id = A4>Q4: Feeling hopeless?</p>
-                    <p id=Q4 class = "answer">{{K10_q4}}</p>
-                </div>
-
-                <div class = "question">
-                    <p id = A5>Q5: Feeling restless or fidgety?</p>
-                    <p id=Q5 class = "answer">{{K10_q5}}</p>
-                </div>
-
-                <div class = "question">
-                    <p id = A6>Q6: Feeling so restless you could not sit still?</p>
-                    <p id=Q6 class = "answer">{{K10_q6}}</p>
-                </div>
-
-                <div class = "question">
-                    <p id = A7>Q7: Feeling depressed?</p>
-                    <p id=Q7 class = "answer">{{k5_q7}}</p>
-                </div>
-
-                <div class = "question">
-                    <p id = A8>Q8: Feeling everything was an effort</p>
-                    <p id=Q8 class = "answer">{{k10_q8}}</p>
-                </div>
-
-                <div class = "question">
-                    <p id = A9>Q9: Feeling so sad that nothing could cheer you up?</p>
-                    <p id=Q9 class = "answer">{{k10_q9}}</p>
-                </div>
-
-                <div class = "question">
-                    <p id = A10>Q10: Feeling worthless?</p>
-                    <p id=Q10 class = "answer">{{k10_q10}}</p>
-                </div>
-
-                <div class = "grade">
-                    <p id=score>Grade:</p>
-                    <!-- <input type = "number"> -->
-                    <br>
-                    <p id=result></p>
-                </div>
-
-                <div id="chart-container">
-                    
-                </div>
-
-                <div id="bar-container">
-
-                </div>
-
-                <div>
+                <div style = "margin:20px auto 20px auto;">
                     <p>Questions need to pay closer attention to</p>
                     <div  id="everyday-question"></div>
                 </div>
@@ -91,6 +101,32 @@
     </body>
     <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
     <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
+    <script type="text/javascript">
+    let btn1 = document.getElementById('answer_button1');
+    let btn2 = document.getElementById('answer_button2');
+    let div1 = document.getElementById('answer_word');
+    let div2 = document.getElementById('answer_chart');
+
+     btn1.addEventListener("click", function() {
+        btn1.style.color = "#fff";
+        btn1.style.backgroundColor = "#4D5656";
+        btn2.style.color = "";
+        btn2.style.backgroundColor = "";
+        div1.style.display = "block";       
+        div2.style.display = "none";  
+     });
+
+    btn2.addEventListener("click", function() {
+        console.log("testing2");
+        btn2.style.color = "#fff";
+        btn2.style.backgroundColor = "#4D5656";
+        btn1.style.color = "";
+        btn1.style.backgroundColor = "";
+        div1.style.display = "none";       
+        div2.style.display = "block";              
+    });
+
+    </script>
     <script type="text/javascript">
         const index = localStorage.getItem("currentK10");
         var answers = JSON.parse(localStorage.getItem("k10-answer"))[index];

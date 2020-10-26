@@ -6,72 +6,83 @@
     <body>
         <div class = "app">
             <div class = "header">
-                    <h1>Patient Health Answer (PHQ-9)</h1>
-                </div>
+                <h1>Patient Health Answer (PHQ-9)</h1>
+            </div>
             <div class = "questionnaire">
                 <h2><i>PHQ-9 Patient Answers:</i></h2>
-                <div class = "question">
-                    <p id = A1>Q1: Little interest or pleasure in doing things?</p>
-                    <p id = Q1 class = "answer">{{phq_q1}}</p>
+                <div class = "button_ans">
+                    <button  style="background-color:#4D5656; color: #fff;" id = "answer_button1">Answer</button>
+                    <button id = "answer_button2">Chart</button>
                 </div>
+                <div id = "answer_content">
+                    <div id = "answer_word" style="display: block;">
+                        <div class = "question">
+                            <p id = "A1">Q1: Little interest or pleasure in doing things?</p>
+                            <p id = "Q1" class = "answer">{{phq_q1}}</p>
+                        </div>
 
-                <div class = "question">
-                    <p id = A2>Q2: Feeling down, depressed, or hopeless?</p>
-                    <p id = Q2 class = "answer">{{phq_q2}}</p>
-                </div>
+                        <div class = "question">
+                            <p id = "A2">Q2: Feeling down, depressed, or hopeless?</p>
+                            <p id = "Q2" class = "answer">{{phq_q2}}</p>
+                        </div>
 
-                <div class = "question">
-                    <p id = A3>Q3: Trouble falling or staying asleep, or sleeping too much?</p>
-                    <p id = Q3 class = "answer">{{phq_q3}}</p>
-                </div>
+                        <div class = "question">
+                            <p id = "A3">Q3: Trouble falling or staying asleep, or sleeping too much?</p>
+                            <p id = "Q3" class = "answer">{{phq_q3}}</p>
+                        </div>
 
-                <div class = "question">
-                    <p id = A4>Q4: Feeling tired or having little energy?</p>
-                    <p id = Q4 class = "answer">{{phq_q4}}</p>
-                </div>
+                        <div class = "question">
+                            <p id = "A4">Q4: Feeling tired or having little energy?</p>
+                            <p id = "Q4" class = "answer">{{phq_q4}}</p>
+                        </div>
 
-                <div class = "question">
-                    <p id = A5>Q5: Poor appetite or overeating?</p>
-                    <p id = Q5 class = "answer">{{phq_q5}}</p>
-                </div>
+                        <div class = "question">
+                            <p id = "A5">Q5: Poor appetite or overeating?</p>
+                            <p id = "Q5" class = "answer">{{phq_q5}}</p>
+                        </div>
 
-                <div class = "question">
-                    <p id = A6>Q6: Feeling bad about yourself - or that you are a failure or have let yourself or your family down?</p>
-                    <p id = Q6 class = "answer">{{phq_q6}}</p>
-                </div>
+                        <div class = "question">
+                            <p id = "A6">Q6: Feeling bad about yourself - or that you are a failure or have let yourself or your family down?</p>
+                            <p id = "Q6" class = "answer">{{phq_q6}}</p>
+                        </div>
 
-                <div class = "question">
-                    <p id = A7>Q7: Trouble concentrating on things, such as reading the newspaper or watching television?</p>
-                    <p id = Q7 class = "answer">{{phq_q7}}</p>
-                </div>
+                        <div class = "question">
+                            <p id = "A7">Q7: Trouble concentrating on things, such as reading the newspaper or watching television?</p>
+                            <p id = "Q7" class = "answer">{{phq_q7}}</p>
+                        </div>
 
-                <div class = "question">
-                    <p id = A8>Q8: Moving or speaking so slowly that other people could have noticed?
-Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual?</p>
-                    <p id = Q8 class = "answer">{{phq_q8}}</p>
-                </div>
+                        <div class = "question">
+                            <p id = "A8">Q8: Moving or speaking so slowly that other people could have noticed?
+        Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual?</p>
+                            <p id = "Q8" class = "answer">{{phq_q8}}</p>
+                        </div>
 
-                <div class = "question">
-                    <p id = A9>Q9: Thoughts that you would be better off dead, or of hurting yourself in some way?</p>
-                    <p id = Q9 class = "answer">{{phq_q9}}</p>
-                </div>
+                        <div class = "question">
+                            <p id = "A9">Q9: Thoughts that you would be better off dead, or of hurting yourself in some way?</p>
+                            <p id = "Q9" class = "answer">{{phq_q9}}</p>
+                        </div>
 
-                <div class = "grade">
-                    <p id=score>Grade:</p>
-                    <!-- <input type = "number"> -->
-                    <br>
-                    <p id=result></p>
-                </div>
-
-                <div id="chart-container">
+                        <div class = "grade">
+                            <p id=score>Grade:</p>
+                            <!-- <input type = "number"> -->
+                            <br>
+                            <p id= "result"></p>
+                        </div>
+                    </div>
                     
+                    <div id = "answer_chart">
+                        <div id="chart-container">
+                        
+                        </div>
+
+                        <div id="bar-container">
+
+                        </div>
+                    </div>
                 </div>
+                            
 
-                <div id="bar-container">
-
-                </div>
-
-                <div>
+                <div style = "margin:20px auto 20px auto;">
                     <p>Questions need to pay closer attention to</p>
                     <div  id="everyday-question"></div>
                 </div>
@@ -87,7 +98,33 @@ Or the opposite - being so fidgety or restless that you have been moving around 
     </body>
     <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
     <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
-    <script type="text/javascript">
+   <script type="text/javascript">
+    let btn1 = document.getElementById('answer_button1');
+    let btn2 = document.getElementById('answer_button2');
+    let div1 = document.getElementById('answer_word');
+    let div2 = document.getElementById('answer_chart');
+
+     btn1.addEventListener("click", function() {
+        btn1.style.color = "#fff";
+        btn1.style.backgroundColor = "#4D5656";
+        btn2.style.color = "";
+        btn2.style.backgroundColor = "";
+        div1.style.display = "block";       
+        div2.style.display = "none";  
+     });
+
+    btn2.addEventListener("click", function() {
+        console.log("testing2");
+        btn2.style.color = "#fff";
+        btn2.style.backgroundColor = "#4D5656";
+        btn1.style.color = "";
+        btn1.style.backgroundColor = "";
+        div1.style.display = "none";       
+        div2.style.display = "block";              
+    });
+
+    </script>
+   <script type="text/javascript">
         const index = localStorage.getItem("currentPhq");
         var answers = JSON.parse(localStorage.getItem("phq-answer"))[index];
         var grade = 0;

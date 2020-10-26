@@ -27,6 +27,7 @@ body {
     align-items: center;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .copyright {
@@ -386,3 +387,30 @@ body {
     line-height:30px;
     background-color:#F8F8F8;
 }
+
+/* answer switch button */
+.main {
+    text-align: center;
+ }
+ button:focus {
+    outline: none;
+ }
+ nav {
+    margin-top: 30px;
+    box-sizing: border-box;
+ }
+ .questionnaire button { 
+     background: white;
+     border: none;
+     height: 36px;
+     line-height: 36px;
+     width: 80px;
+     text-align: center;
+     border: 1px solid lightgray;
+     border-radius: 4px;
+     cursor: pointer;
+     margin-top: 20px;
+ }
+
+
+
