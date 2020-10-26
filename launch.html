@@ -23,7 +23,7 @@
     function login() {
         FHIR.oauth2.authorize({
             'clientId': 'G6',
-            'scope': 'launch openid fhirUser patient/*.* user/*.*',
+            'scope': 'openid, offline_access, launch, patient/QuestionnaireResponses.*',
             'iss':'https://uat.csiro.au/fhirServerR4/fhir'
         });
     }
