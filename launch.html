@@ -30,10 +30,11 @@
                 console.log(json);
                 var uri = json.rest[0].security.extension[0].extension[0].valueUri;
                 var url = uri + "?client_id=G6&scope=launch openid fhirUser patient/*.* user/*.*&redirect_url=https://https://chloe-sun.github.io/QuestionnaireFHIR/launch";
-                // var request = new XMLHttpRequest();
-                // request.open('POST',url,true);
-                window.location.replace(url)
-                
+                var request = new XMLHttpRequest();
+                request.open('POST',url,true);
+                // window.location.replace(url)
+                var page = request.responseText;
+                console.log(page);
             }
         };
         // FHIR.oauth2.authorize({
