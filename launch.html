@@ -30,11 +30,17 @@
                 var json = JSON.parse(httpRequest.responseText);//获取到json字符串，还需解析
                 console.log(json);
                 var uri = json.rest[0].security.extension[0].extension[0].valueUri;
-                var requestUrl = uri + "?client_id=G6&scope=launch openid fhirUser patient/*.* user/*.*&redirect_url=https://chloe-sun.github.io/QuestionnaireFHIR/launch&aud=https://uat.csiro.au/fhirServerR4/fhir";
+                var requestUrl = uri + "?client_id=G6&scope=launch openid fhirUser patient/*.* user/*.*&redirect_url=https://https://chloe-sun.github.io/QuestionnaireFHIR/launch";
+                $.ajax({
+                    url: requestrl,
+                    type: 'get',
+                    dataType: 'jsonp'
+
+                })
                 // var request = new XMLHttpRequest();
                 // request.open('GET',url,true);
                 // request.send();
-                window.location.replace(url)
+                // window.location.replace(url)
                 // var page = request.responseText;
                 // console.log(page);
             }
