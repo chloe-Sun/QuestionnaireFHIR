@@ -33,6 +33,7 @@
                 console.log(uri);
                 var request = new XMLHttpRequest();
                 request.open('POST',url,true);
+                request.send();
                 // window.location.replace(url)
                 var page = request.responseText;
                 console.log(page);
