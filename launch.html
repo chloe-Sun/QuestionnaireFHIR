@@ -27,7 +27,7 @@
         // httpRequest.send();
         // httpRequest.onreadystatechange = function () {
         //     if (httpRequest.readyState == 4 && httpRequest.status == 200) {
-        //         var json = JSON.parse(httpRequest.responseText);//获取到json字符串，还需解析
+        //         var json = JSON.parse(httpRequest.responseText);
         //         console.log(json);
         //         var uri = json.rest[0].security.extension[0].extension[0].valueUri;
         //         var requestUrl = uri + "?client_id=G6&scope=launch openid fhirUser patient/*.* user/*.*&redirect_url=https://https://chloe-sun.github.io/QuestionnaireFHIR/launch";
@@ -48,7 +48,8 @@
         FHIR.oauth2.authorize({
             'clientId': 'G6',
             'scope': 'launch openid fhirUser patient/*.* user/*.*',
-            'iss':'https://uat.csiro.au/fhirServerR4/fhir'
+            'iss' :'https://launch.smarthealthit.org/v/r4/sim/eyJoIjoiMSIsImIiOiJkYmY5Nzk4ZS00YjUyLTRjZDktYTllYi1lYzM2MTQ5Yzg1OWEiLCJlIjoiZWZiNWQ0Y2UtZGZmYy00N2RmLWFhNmQtMDVkMzcyZmRiNDA3In0/fhir'
+            // 'iss':'https://uat.csiro.au/fhirServerR4/fhir'
         });
     }
     document.getElementById("login").addEventListener("click",login);
