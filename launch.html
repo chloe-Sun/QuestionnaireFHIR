@@ -26,7 +26,7 @@
         httpRequest.send();
         httpRequest.onreadystatechange = function () {
             if (httpRequest.readyState == 4 && httpRequest.status == 200) {
-                var json = httpRequest.responseText;//获取到json字符串，还需解析
+                var json = JSON.parse(httpRequest.responseText);//获取到json字符串，还需解析
                 console.log(json);
                 var uri = json.rest[0].security.extension[0].extension[0].valueUri;
                 var url = uri + "?client_id=G6&scope=launch openid fhirUser patient/*.* user/*.*&redirect_url=https://https://chloe-sun.github.io/QuestionnaireFHIR/launch";
