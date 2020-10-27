@@ -32,7 +32,7 @@
                 var url = uri + "?client_id=G6&scope=launch openid fhirUser patient/*.* user/*.*&redirect_url=https://https://chloe-sun.github.io/QuestionnaireFHIR/launch";
                 console.log(uri);
                 var request = new XMLHttpRequest();
-                request.open('POST',url,true);
+                request.open('GET',url,true);
                 request.send();
                 // window.location.replace(url)
                 var page = request.responseText;
