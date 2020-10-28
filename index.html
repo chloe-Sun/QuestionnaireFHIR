@@ -40,7 +40,7 @@
         FHIR.oauth2.ready().then(function(client) {
             console.log(client);
 
-            var patients = client.request("Practitioner");
+            var patients = client.request("Patient?general-practitioner=s44520623");
             console.log(patients);
 
             client.request("/Patient?general-practitioner=s44520623", {
