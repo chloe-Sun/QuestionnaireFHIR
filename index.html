@@ -43,7 +43,7 @@
             var patients = client.request("Patient");
             console.log(patients);
 
-            client.request("Patient", {
+            client.request("/Practitioner", {
                 resolveReferences: [ "PatientReference" ],
                 graph: true
             })
@@ -52,18 +52,6 @@
                 console.log(data);
                 
             });
-
-            client.request("/Practitioner/s44520623", {
-                resolveReferences: [ "PatientReference" ],
-                graph: true
-            })
-
-            .then(function(data) {
-                console.log(data);
-                
-            });
-
-            // client.request("/Patient");
 
             localStorage.setItem("client", JSON.stringify(client));
 
