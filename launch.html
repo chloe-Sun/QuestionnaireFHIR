@@ -49,7 +49,8 @@
         // };
         FHIR.oauth2.authorize({
             'clientId': 'G6',
-            'scope': 'launch/patient openid patient/*.* user/*.*',
+            // 'scope': 'launch/patient openid patient/*.* user/*.*',
+            'scope': 'launch',
             // 'iss' :'https://launch.smarthealthit.org/v/r4/sim/eyJoIjoiMSIsImIiOiJkYmY5Nzk4ZS00YjUyLTRjZDktYTllYi1lYzM2MTQ5Yzg1OWEiLCJlIjoiZWZiNWQ0Y2UtZGZmYy00N2RmLWFhNmQtMDVkMzcyZmRiNDA3In0/fhir'
             'iss':'https://uat.csiro.au/fhirServerR4/fhir'
         });
