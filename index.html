@@ -40,6 +40,9 @@
         FHIR.oauth2.ready().then(function(client) {
             console.log(client);
 
+            var patients = client.request("Patient");
+            console.log(patients);
+
             localStorage.setItem("client", JSON.stringify(client));
 
             const phq_9 = localStorage.getItem("phq-9");
