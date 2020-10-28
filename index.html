@@ -43,6 +43,16 @@
             var patients = client.request("Practitioner");
             console.log(patients);
 
+            client.request("/Patient?general-practitioner=s44520623", {
+                resolveReferences: [ "PatientReference" ],
+                graph: true
+            })
+
+            .then(function(data) {
+                console.log(data);
+                
+            });
+
             localStorage.setItem("client", JSON.stringify(client));
 
             const phq_9 = localStorage.getItem("phq-9");
