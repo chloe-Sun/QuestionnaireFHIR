@@ -62,7 +62,8 @@
                     console.log(pt);
                 },
                 function(error) {
-                    document.getElementById("patient").innerText = error.stack;
+                    // document.getElementById("patient").innerText = error.stack;
+                    console.log(error);
                 }
             );
 
@@ -72,6 +73,7 @@
                     console.log(ur);
                 },
                 function(error) {
+                    console.log(error);
                     console.log("get user info failed");
                 }
             )
