@@ -43,7 +43,7 @@
             var patients = client.request("Patient");
             console.log(patients);
 
-            client.request("/Patient/83c56dc9-c644-4983-ab56-35ac03831196", {
+            client.request("Patient", {
                 resolveReferences: [ "PatientReference" ],
                 graph: true
             })
