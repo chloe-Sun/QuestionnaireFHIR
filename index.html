@@ -40,18 +40,18 @@
         FHIR.oauth2.ready().then(function(client) {
             console.log(client);
 
-            var patients = client.request("Patient");
-            console.log(patients);
+            // var patients = client.request("Patient");
+            // console.log(patients);
 
-            client.request("/Practitioner", {
-                resolveReferences: [ "PatientReference" ],
-                graph: true
-            })
+            // client.request("/Practitioner", {
+            //     resolveReferences: [ "PatientReference" ],
+            //     graph: true
+            // })
 
-            .then(function(data) {
-                console.log(data);
+            // .then(function(data) {
+            //     console.log(data);
                 
-            });
+            // });
 
             localStorage.setItem("client", JSON.stringify(client));
 
