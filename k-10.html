@@ -300,6 +300,8 @@
             const date = new Date();
             var month = date.getMonth() + 1;
             month = month < 10 ? '0' + month : '' + month;
+            var get = date.getDate();
+            day = day < 10 ? '0' + day : '' + day;
             const k_10 = {
                 "resourceType" : "QuestionnaireResponse",
                 "id" : "questionnaireresponse-phq9-" + client.patient.id,
@@ -334,7 +336,7 @@
                 "context" : {
                     "reference" : "Encounter/encounter1"
                 },
-                "authored" : date.getFullYear() + "-" + month + "-" + date.getDate(),
+                "authored" : date.getFullYear() + "-" + month + "-" + day,
                 "author" : {
                     "reference" : "Practitioner/" + client.user.id
                 },

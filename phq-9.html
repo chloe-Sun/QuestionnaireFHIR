@@ -240,27 +240,15 @@ Or the opposite - being so fidgety or restless that you have been moving around 
         const date = new Date();
         var month = date.getMonth() + 1;
         month = month < 10 ? '0' + month : '' + month;
+        var get = date.getDate();
+        day = day < 10 ? '0' + day : '' + day;
         const phq_9 = {
           "resourceType" : "QuestionnaireResponse",
           "id" : "questionnaireresponse-phq9-" + client.patient.id,
-          // "meta" : {
-          //   "profile" : [
-          //     "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/argo-questionnaireresponse"
-          //   ]
-          // },
           "text" : {
             "status" : "generated",
             "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div class=\"hapiHeaderText\">Fran <b>AJUSTED </b></div><table class=\"hapiPropertyTable\"><tbody/></table></div>"
           },
-          // "extension" : [
-          //   {
-          //     "url" : "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-responsePeriod",
-          //     "valuePeriod" : {
-          //       "start" : "2019-02-13T00:36:07.985403Z",
-          //       "end" : "2019-02-13T00:36:41.051113Z"
-          //     }
-          //   }
-          // ],
           "identifier" : {
             "value" : "questionnaireresponse-example-phq9"
           },
@@ -274,7 +262,7 @@ Or the opposite - being so fidgety or restless that you have been moving around 
           "context" : {
             "reference" : "Encounter/encounter1"
           },
-          "authored" : date.getFullYear() + "-" + month + "-" + date.getDate(),
+          "authored" : date.getFullYear() + "-" + month + "-" + day,
           "author" : {
             "reference" : "Practitioner/" + client.user.id
           },
